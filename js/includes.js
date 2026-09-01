@@ -1,5 +1,5 @@
 /* =============================================================
-   includes.js — No More Hiding
+   includes.js — no more hiding
    Injects the shared nav and footer into every page.
    Place this script tag at the bottom of <body>, before </body>.
  
@@ -18,7 +18,7 @@
 <nav class="nav">
   <div class="nav-logo-wrap">
     <a href="/index.html">
-      <img src="/images/logo/nmh-logo.png" alt="No More Hiding" />
+      <img src="/images/logo/nmh-logo.png" alt="no more hiding" />
     </a>
   </div>
  
@@ -60,7 +60,7 @@
     <div>
       <div class="footer-logo-wrap">
         <a href="/index.html">
-          <img src="/images/logo/nmh-logo.png" alt="No More Hiding" />
+          <img src="/images/logo/nmh-logo.png" alt="no more hiding" />
         </a>
       </div>
       <p class="footer-tagline">Live Whole. Live Seen. Live Free.</p>
@@ -129,7 +129,7 @@
   </div>
  
   <div class="footer-bottom">
-    <div>&copy; <span id="footer-year"></span> No More Hiding. All rights reserved.</div>
+    <div>&copy; <span id="footer-year"></span> no more hiding. All rights reserved.</div>
     <div>
       <a href="/privacy.html">Privacy Policy</a>
       &nbsp;·&nbsp;

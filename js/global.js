@@ -1,5 +1,5 @@
 /* =============================================================
-   global.js — No More Hiding
+   global.js — no more hiding
    Runs on every page. Handles site-wide link behavior:
    - External links (off this domain) → open in new tab
    - Internal links (same domain) → always same tab, no extra tabs

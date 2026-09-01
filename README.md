@@ -1,6 +1,6 @@
 # NoMoreHiding.net
 
-Website for Renetta Smith — founder of No More Hiding, a platform for women navigating life's transitions with honesty, courage, and community.
+Website for Renetta Smith — founder of no more hiding, a platform for women navigating life's transitions with honesty, courage, and community.
 
 ---
 
