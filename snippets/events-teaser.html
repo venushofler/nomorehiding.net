@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar Component — Snippet Preview</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lato:wght@300;400;700&display=swap"
+    />
+
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+  </head>
+
+  <body>
+    <!-- ═══════════════════════════════════════════════════════
+     UPCOMING EVENTS TEASER — snippet
+     Source: snippets/events-teaser.html
+     Included in: index.html
+     To edit event listings: update this file only.
+     Styles: css/components.css → .events-teaser-section
+  ══════════════════════════════════════════════════════════ -->
+    <section
+      class="events-teaser-section"
+      aria-labelledby="events-teaser-heading"
+      data-testid="events-teaser"
+    >
+      <div class="events-teaser-inner">
+        <div class="events-teaser-header">
+          <div class="eyebrow">Community</div>
+          <h2 id="events-teaser-heading" class="section-title">
+            Upcoming Events
+          </h2>
+        </div>
+        <ul class="events-teaser-list" role="list">
+          <li class="events-teaser-item" data-testid="teaser-event-1">
+            <div class="events-teaser-dot salmon" aria-hidden="true"></div>
+            <div class="events-teaser-body">
+              <div class="events-teaser-title">Color Outside the Lines</div>
+              <div class="events-teaser-meta">
+                Sat, Oct 24 &nbsp;·&nbsp; 1:00–4:00 PM &nbsp;·&nbsp; Gambrills,
+                MD
+              </div>
+              <a href="/events/" class="events-teaser-link"
+                >Details &amp; Registration <span aria-hidden="true">→</span></a
+              >
+            </div>
+          </li>
+          <li class="events-teaser-item" data-testid="teaser-event-2">
+            <div class="events-teaser-dot sage" aria-hidden="true"></div>
+            <div class="events-teaser-body">
+              <div class="events-teaser-title">Friendsgiving @ The Winery</div>
+              <div class="events-teaser-meta">
+                Sat, Nov 28 &nbsp;·&nbsp; 1:00–4:00 PM &nbsp;·&nbsp; Winery at
+                Bull Run
+              </div>
+              <a href="/events/" class="events-teaser-link"
+                >Details <span aria-hidden="true">→</span></a
+              >
+            </div>
+          </li>
+        </ul>
+        <div class="section-cta-wrap">
+          <a
+            href="/events/"
+            class="btn btn--salmon"
+            data-testid="events-view-all"
+          >
+            View All Events <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script src="/js/events.js"></script>
+    <script src="/js/global.js"></script>
+  </body>
+</html>

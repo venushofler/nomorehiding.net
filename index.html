@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Whole. Live Seen. Live Free. — No More Hiding</title>
+    <meta
+      name="description"
+      content="No More Hiding is a community for women in midlife ready to live boldly, authentically, and free. Join founder Renetta Smith and women who are done playing small."
+    />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="No More Hiding — Live Whole. Live Seen. Live Free."
+    />
+    <meta
+      property="og:description"
+      content="A community for women in midlife ready to step into their full lives."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nomorehiding.net/" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lato:wght@300;400;700&display=swap"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+
+    <!-- Video carousel inline critical CSS -->
+  </head>
+
+  <body data-page="home">
+    <!-- SKIP TO MAIN CONTENT (accessibility) -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- NAV (injected by includes.js) -->
+    <div id="site-nav" data-testid="site-nav" role="banner"></div>
+
+    <main id="main-content" data-testid="main-content">
+      <!-- ═══════════════════════════════════════════════════════
+         HERO VIDEO CAROUSEL
+         To swap videos: update src in each .carousel-slide below.
+         Current clips (all 5s trimmed mp4):
+           Slide 1: nmh-home-hero.mp4
+           Slide 2: AdobeStock_619444915.mp4
+           Slide 3: AdobeStock_673253370.mp4
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        class="carousel"
+        aria-label="Featured content slideshow"
+        aria-roledescription="carousel"
+        data-testid="hero-carousel"
+      >
+        <div
+          class="carousel-track"
+          aria-live="off"
+          data-testid="carousel-track"
+        >
+          <!-- ── Slide 1 ── -->
+          <div
+            class="carousel-slide is-active"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="Slide 1 of 3: Stop Hiding. Start Living."
+            data-testid="carousel-slide-1"
+          >
+            <video
+              class="carousel-video"
+              autoplay
+              muted
+              playsinline
+              loop
+              preload="metadata"
+              aria-hidden="true"
+              data-testid="carousel-video-1"
+              poster="/images/home/pexels-photo-8818544.jpg"
+            >
+              <source src="/videos/home/nmh-main-hero.mp4" type="video/mp4" />
+            </video>
+            <div class="carousel-overlay" aria-hidden="true"></div>
+            <div class="carousel-content">
+              <div class="carousel-eyebrow">Welcome to No More Hiding</div>
+              <h1 class="carousel-title">Stop Hiding.<br />Start Living.</h1>
+              <p class="carousel-caption">
+                A community for women ready to live whole, seen, and free.
+              </p>
+              <a
+                href="/start-here/"
+                class="carousel-cta btn-primary"
+                data-testid="hero-cta-1"
+              >
+                Start Here <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- ── Slide 2 ── -->
+          <div
+            class="carousel-slide"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="Slide 2 of 3: You Were Made for More."
+            data-testid="carousel-slide-2"
+          >
+            <video
+              class="carousel-video"
+              muted
+              playsinline
+              preload="none"
+              aria-hidden="true"
+              data-testid="carousel-video-2"
+              poster="/images/home/tribe2.jpg"
+            >
+              <source src="/videos/AdobeStock_619444915.mp4" type="video/mp4" />
+            </video>
+            <div class="carousel-overlay" aria-hidden="true"></div>
+            <div class="carousel-content">
+              <div class="carousel-eyebrow">Built for Women Like You</div>
+              <h2 class="carousel-title">You Were Made<br />for More.</h2>
+              <p class="carousel-caption">
+                Golf, community, and the courage to show up as yourself.
+              </p>
+              <a
+                href="/about/"
+                class="carousel-cta btn-primary"
+                data-testid="hero-cta-2"
+              >
+                Our Story <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- ── Slide 3 ── -->
+          <div
+            class="carousel-slide"
+            role="group"
+            aria-roledescription="slide"
+            aria-label="Slide 3 of 3: Your Next Chapter Starts Here."
+            data-testid="carousel-slide-3"
+          >
+            <video
+              class="carousel-video"
+              muted
+              playsinline
+              preload="none"
+              aria-hidden="true"
+              data-testid="carousel-video-3"
+              poster="/images/home/tribe2-FXdwTMCWtsjjfptC.jpg"
+            >
+              <source src="/videos/AdobeStock_673253370.mp4" type="video/mp4" />
+            </video>
+            <div class="carousel-overlay" aria-hidden="true"></div>
+            <div class="carousel-content">
+              <div class="carousel-eyebrow">Events &amp; Community</div>
+              <h2 class="carousel-title">
+                Your Next Chapter<br />Starts Here.
+              </h2>
+              <p class="carousel-caption">
+                Join women who are done playing small.
+              </p>
+              <a
+                href="/events/"
+                class="carousel-cta btn-primary"
+                data-testid="hero-cta-3"
+              >
+                See Events <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- /.carousel-track -->
+
+        <!-- Prev / Next controls -->
+        <button
+          class="carousel-arrow carousel-arrow--prev"
+          aria-label="Previous slide"
+          data-testid="hero-prev-btn"
+          type="button"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <button
+          class="carousel-arrow carousel-arrow--next"
+          aria-label="Next slide"
+          data-testid="hero-next-btn"
+          type="button"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+
+        <!-- Dot navigation -->
+        <div
+          class="carousel-dots"
+          role="tablist"
+          aria-label="Slide navigation"
+          data-testid="hero-dots"
+        >
+          <button
+            class="carousel-dot is-active"
+            role="tab"
+            aria-selected="true"
+            aria-label="Slide 1"
+            data-slide="0"
+            data-testid="hero-dot-1"
+            type="button"
+          ></button>
+          <button
+            class="carousel-dot"
+            role="tab"
+            aria-selected="false"
+            aria-label="Slide 2"
+            data-slide="1"
+            data-testid="hero-dot-2"
+            type="button"
+          ></button>
+          <button
+            class="carousel-dot"
+            role="tab"
+            aria-selected="false"
+            aria-label="Slide 3"
+            data-slide="2"
+            data-testid="hero-dot-3"
+            type="button"
+          ></button>
+        </div>
+
+        <!-- Slide counter -->
+        <div
+          class="carousel-counter"
+          aria-hidden="true"
+          data-testid="hero-counter"
+        >
+          <span data-testid="hero-counter-current">1</span>&nbsp;/&nbsp;<span
+            >3</span
+          >
+        </div>
+      </section>
+      <!-- /.carousel -->
+
+      <!-- ═══════════════════════════════════════════════════════
+         STAT STRIP
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        class="stat-strip"
+        aria-label="Community by the numbers"
+        data-testid="stat-strip"
+      >
+        <div class="stat-strip-inner">
+          <div class="stat-item" data-testid="stat-community">
+            <div class="stat-number" aria-label="500 plus">500+</div>
+            <div class="stat-label">Women in Community</div>
+          </div>
+
+          <div class="stat-divider" role="separator" aria-hidden="true"></div>
+
+          <div class="stat-item" data-testid="stat-years">
+            <div class="stat-number" aria-label="5 plus">5+</div>
+            <div class="stat-label">Years Together</div>
+          </div>
+
+          <div class="stat-divider" role="separator" aria-hidden="true"></div>
+
+          <div class="stat-item" data-testid="stat-events">
+            <div class="stat-number" aria-label="20 plus">20+</div>
+            <div class="stat-label">Live Events Hosted</div>
+          </div>
+
+          <div class="stat-divider" role="separator" aria-hidden="true"></div>
+
+          <div class="stat-item" data-testid="stat-states">
+            <div class="stat-number">3</div>
+            <div class="stat-label">States &amp; Growing</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         ABOUT PREVIEW
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        class="about"
+        aria-labelledby="about-heading"
+        data-testid="about-preview"
+      >
+        <div class="about-image-col" data-testid="about-image">
+          <img
+            src="/images/home/renetta-smith-founder.jpg"
+            alt="Renetta Smith, Founder & CEO of No More Hiding"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="about-content">
+          <div class="eyebrow">Meet Your Guide</div>
+          <h2 id="about-heading" class="section-title">
+            I Was the Woman<br />Hiding in Plain Sight.
+          </h2>
+          <p>
+            For years, I showed up — at work, at church, in relationships — and
+            never let anyone see the real me. I was living a life that looked
+            full but felt empty.
+          </p>
+          <p>
+            Then I discovered the power of authentic community, of golf, of
+            finally letting myself be seen. No More Hiding is the movement I
+            built for every woman who knows she was made for more — but hasn't
+            given herself permission to go get it.
+          </p>
+          <a
+            href="/about/#meet-renetta"
+            class="btn btn-outline"
+            data-testid="about-cta"
+          >
+            Meet Renetta <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         PULL QUOTE
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        class="pull-quote-section"
+        aria-label="Featured quote from Renetta Smith"
+        data-testid="pull-quote-section"
+      >
+        <div class="pull-quote-inner">
+          <blockquote class="pull-quote" data-testid="pull-quote-text">
+            <p>
+              "I realized I had been hiding — from myself, from joy, from the
+              life I deserved. I decided that day: no more."
+            </p>
+            <cite class="pull-quote-cite"
+              >— Renetta Smith, Founder & CEO of No More Hiding</cite
+            >
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         BLOG CARD CAROUSEL
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        class="card-carousel-section"
+        aria-labelledby="blog-section-heading"
+        data-testid="blog-carousel"
+      >
+        <div class="card-carousel-header">
+          <div>
+            <div class="card-carousel-label">From the Blog</div>
+            <h2 id="blog-section-heading" class="card-carousel-title">
+              Stories, Insight &amp; Inspiration
+            </h2>
+          </div>
+          <!-- <nav
+            class="card-carousel-nav"
+            aria-label="Blog post navigation"
+            data-testid="blog-carousel-nav"
+          >
+            <div
+              class="card-carousel-counter"
+              aria-live="polite"
+              aria-atomic="true"
+              data-testid="blog-counter"
+            >
+              <span data-testid="blog-counter-range">1–3</span> of
+              <span data-testid="blog-counter-total">6</span>
+            </div>
+            <button
+              class="card-carousel-btn"
+              aria-label="Show previous posts"
+              data-testid="blog-prev-btn"
+              type="button"
+              disabled
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button
+              class="card-carousel-btn"
+              aria-label="Show next posts"
+              data-testid="blog-next-btn"
+              type="button"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </nav> -->
+        </div>
+
+        <div
+          id="blog-cards"
+          class="card-carousel-grid"
+          role="list"
+          aria-label="Blog posts"
+          data-testid="blog-cards"
+        >
+        </div>
+        <!-- /.card-carousel-grid -->
+
+        <div class="section-cta-wrap">
+          <a href="/blog/" class="btn btn--salmon" data-testid="blog-view-all">
+            View All Posts <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         EVENT FLYER GRID
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        class="flyer-section"
+        aria-labelledby="flyer-heading"
+        data-testid="flyer-section"
+      >
+        <div class="flyer-header">
+          <div class="gallery-eyebrow">Community</div>
+          <h2 id="flyer-heading" class="gallery-title">Upcoming Events</h2>
+        </div>
+
+        <div
+          class="flyer-grid"
+          role="list"
+          aria-label="Upcoming event flyers"
+          data-testid="flyer-grid"
+        >
+          <!-- Event 1: Color Outside the Lines -->
+          <a
+            class="flyer-item flyer-item--square"
+            href="https://www.eventbrite.com/e/color-outside-the-lines-a-sip-snack-paint-experience-tickets-1992692301315"
+            target="_blank"
+            rel="noopener"
+            role="listitem"
+            aria-label="Color Outside the Lines — Sip, Snack &amp; Paint — Oct 24. Register on Eventbrite."
+            data-testid="flyer-item-1"
+          >
+            <div class="flyer-img-wrap">
+              <img
+                src="/images/events/color-outside-the-lines-flyer.png"
+                alt="Color Outside the Lines: A Sip, Snack &amp; Paint Experience — Saturday October 24, 2026"
+                loading="lazy"
+              />
+              <div class="flyer-overlay" aria-hidden="true">
+                <span class="flyer-overlay-label">Register Now →</span>
+              </div>
+            </div>
+            <div class="flyer-caption">
+              <div class="flyer-caption-title">Color Outside the Lines</div>
+              <div class="flyer-caption-meta">
+                Sat, Oct 24 &nbsp;·&nbsp; Gambrills, MD
+              </div>
+            </div>
+          </a>
+
+          <!-- Event 2: Friendsgiving @ The Winery -->
+          <a
+            class="flyer-item flyer-item--square"
+            href="https://www.eventbrite.com/e/friendsgiving-the-winery-tickets-1998302663058?aff=ebdsoporgprofile"
+            role="listitem"
+            aria-label="Friendsgiving at The Winery — Nov 28. See details."
+            data-testid="flyer-item-2"
+          >
+            <div class="flyer-img-wrap">
+              <img
+                src="/images/events/friendsgiving-flyer.png"
+                alt="Friendsgiving at The Winery — Saturday November 28, 2026"
+                loading="lazy"
+              />
+              <div class="flyer-overlay" aria-hidden="true">
+                <span class="flyer-overlay-label">See Details →</span>
+              </div>
+            </div>
+            <div class="flyer-caption">
+              <div class="flyer-caption-title">Friendsgiving @ The Winery</div>
+              <div class="flyer-caption-meta">
+                Sat, Nov 28 &nbsp;·&nbsp; Winery at Bull Run
+              </div>
+            </div>
+          </a>
+
+          <!-- Event 3 or placeholder image without href -->
+
+          <a
+            class="flyer-item flyer-item--square"
+            href=""
+            role="listitem"
+            aria-label="Friendsgiving at The Winery — Nov 28. See details."
+            data-testid="flyer-item-2"
+          >
+            <div class="flyer-img-wrap">
+              <img
+                src="/images/events/2027-events-coming-soon.png"
+                alt="2027 Calendar of Events — Coming Soon"
+                loading="lazy"
+              />
+              <div class="flyer-overlay" aria-hidden="true">
+                <span class="flyer-overlay-label">See Details →</span>
+              </div>
+            </div>
+            <div class="flyer-caption">
+              <div class="flyer-caption-title">
+                2027 Calendar of Events — Coming Soon
+              </div>
+              <div class="flyer-caption-meta">
+                2027 Calendar of Events — Coming Soon
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- /.flyer-grid -->
+
+        <div class="flyer-cta-wrap">
+          <a
+            href="/events/#events-calendar"
+            class="btn btn--salmon"
+            data-testid="flyer-view-all"
+          >
+            View All Events <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         CTA BANNER
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        class="cta-banner"
+        aria-labelledby="cta-heading"
+        data-testid="cta-banner"
+      >
+        <div class="cta-banner-inner">
+          <div class="cta-eyebrow">Ready to Stop Hiding?</div>
+          <h2 id="cta-heading" class="cta-title">Your Community Is Waiting.</h2>
+          <p class="cta-subtitle">
+            Women across the country are living whole, seen, and free. Come join
+            us.
+          </p>
+          <div
+            class="cta-actions"
+            role="group"
+            aria-label="Get started options"
+          >
+            <a
+              href="/start-here/"
+              class="btn btn-primary"
+              data-testid="cta-primary-btn"
+            >
+              Start Here
+            </a>
+            <a
+              href="/events/"
+              class="btn btn-ghost"
+              data-testid="cta-secondary-btn"
+            >
+              See Upcoming Events
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- /#main-content -->
+
+    <!-- FOOTER (injected by includes.js) -->
+    <div id="site-footer" data-testid="site-footer" role="contentinfo"></div>
+
+    <!-- Scripts: includes first (nav/footer), then page-specific -->
+    <script src="/js/includes.js"></script>
+    <script src="/js/blog-data.js"></script>
+    <script src="/js/home-render.js"></script>
+    <script src="/js/home.js"></script>
+
+    <script src="/js/global.js"></script>
+  </body>
+</html>

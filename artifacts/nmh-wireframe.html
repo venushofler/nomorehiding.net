@@ -1,0 +1,1135 @@
+<title>NMH Homepage Wireframe</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ground:    #f7f7f8;
+    --surface-1: #efeff1;
+    --surface-2: #e3e3e6;
+    --surface-3: #c8c8cc;
+    --surface-4: #9898a0;
+    --dark-sec:  #2f2f34;
+    --text:      #1c1c20;
+    --text-mid:  #5a5a62;
+    --text-light:#9898a0;
+    --rule:      #d8d8dc;
+    --ann:       #d94f3b;
+    --ann-bg:    #fdecea;
+    --chip-bg:   #2f2f34;
+    --chip-txt:  #ffffff;
+    --accent:    #4a6fa5; /* muted blue — for interactive indicators */
+  }
+
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--ground);
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* ─── UTILITY ─── */
+  .label-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--chip-bg);
+    color: var(--chip-txt);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+  }
+
+  .ann {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--ann-bg);
+    border: 1px solid var(--ann);
+    color: var(--ann);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+
+  .ann::before { content: '↳'; font-size: 10px; }
+
+  /* Content placeholder bars */
+  .bar {
+    height: 10px;
+    background: var(--surface-3);
+    border-radius: 2px;
+    margin-bottom: 8px;
+  }
+  .bar--sm  { width: 30%; }
+  .bar--md  { width: 55%; }
+  .bar--lg  { width: 80%; }
+  .bar--xl  { width: 95%; }
+  .bar--h1  { height: 22px; }
+  .bar--h2  { height: 17px; }
+  .bar--h3  { height: 13px; }
+
+  /* Image / video placeholder */
+  .img-ph {
+    background:
+      repeating-linear-gradient(
+        45deg,
+        var(--surface-3) 0px,
+        var(--surface-3) 1px,
+        var(--surface-2) 1px,
+        var(--surface-2) 11px
+      );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .img-ph-label {
+    background: rgba(255,255,255,0.82);
+    border: 1px solid var(--surface-3);
+    padding: 6px 14px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+  }
+
+  /* Button wireframe */
+  .btn-ph {
+    display: inline-block;
+    border: 2px solid var(--surface-4);
+    padding: 9px 22px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    background: transparent;
+  }
+  .btn-ph--fill {
+    background: var(--surface-3);
+    border-color: var(--surface-3);
+    color: var(--text);
+  }
+  .btn-ph--outline-white {
+    border-color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* Section wrapper */
+  .wf-section {
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .wf-section--dark {
+    background: var(--dark-sec);
+  }
+
+  /* ─── RULER / PAGE HEADER ─── */
+  .wf-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    border-bottom: 2px solid var(--rule);
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .wf-header-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .wf-header-meta {
+    font-size: 11px;
+    color: var(--text-light);
+    display: flex;
+    gap: 24px;
+  }
+
+  /* Legend */
+  .wf-legend {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: var(--text-mid);
+  }
+
+  .legend-swatch {
+    width: 16px;
+    height: 10px;
+    border-radius: 2px;
+    border: 1px solid var(--rule);
+  }
+
+  .legend-swatch--img {
+    background: repeating-linear-gradient(45deg, var(--surface-3) 0px, var(--surface-3) 1px, var(--surface-2) 1px, var(--surface-2) 6px);
+  }
+
+  .legend-swatch--text  { background: var(--surface-3); }
+  .legend-swatch--dark  { background: var(--dark-sec); border-color: var(--dark-sec); }
+  .legend-swatch--ann   { background: var(--ann-bg); border-color: var(--ann); }
+
+
+  /* ─── 01 NAV ─── */
+  .wf-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 80px;
+    background: white;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .wf-nav-logo {
+    width: 120px;
+    height: 52px;
+    background: var(--surface-2);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  .wf-nav-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .wf-nav-link {
+    width: 60px;
+    height: 8px;
+    background: var(--surface-3);
+    border-radius: 2px;
+  }
+
+  .wf-nav-link--active {
+    background: var(--surface-4);
+    position: relative;
+  }
+
+  /* ─── 02 HERO VIDEO CAROUSEL ─── */
+  .wf-hero {
+    position: relative;
+    height: 560px;
+    overflow: hidden;
+  }
+
+  .wf-hero-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .wf-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(47, 47, 52, 0.52);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wf-hero-content {
+    text-align: center;
+    padding: 0 160px;
+    max-width: 840px;
+  }
+
+  .wf-hero-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+  }
+
+  .wf-hero-slide-counter {
+    position: absolute;
+    top: 20px;
+    right: 32px;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.1em;
+  }
+
+  .wf-hero-dots {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 52px;
+    background: rgba(47,47,52,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .wf-dot {
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.28);
+  }
+
+  .wf-dot--active {
+    width: 28px;
+    background: rgba(255,255,255,0.75);
+  }
+
+  .wf-dot--inactive { width: 8px; }
+
+  /* Hero annotation strip */
+  .wf-hero-ann {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  /* ─── 03 STAT STRIP ─── */
+  .wf-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--dark-sec);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .wf-stat {
+    padding: 36px 24px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .wf-stat:last-child { border-right: none; }
+
+  .wf-stat-num {
+    font-size: 32px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.18);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ─── 04 ABOUT PREVIEW ─── */
+  .wf-about {
+    display: flex;
+    min-height: 520px;
+  }
+
+  .wf-about-img {
+    flex: 0 0 480px;
+  }
+
+  .wf-about-text {
+    flex: 1;
+    padding: 72px 72px;
+    background: var(--surface-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  /* ─── 05 PULL QUOTE ─── */
+  .wf-pq {
+    background: var(--dark-sec);
+    padding: 80px 160px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* ─── 06 BLOG CARD CAROUSEL ─── */
+  .wf-blog {
+    padding: 72px 48px;
+    background: var(--surface-1);
+  }
+
+  .wf-blog-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 36px;
+  }
+
+  .wf-blog-nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .wf-blog-nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid var(--surface-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-mid);
+    font-size: 14px;
+  }
+
+  .wf-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .wf-card {
+    background: white;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .wf-card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* ─── 07 PHOTO GALLERY ─── */
+  .wf-gallery {
+    padding: 72px 48px;
+    background: white;
+  }
+
+  .wf-gallery-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .wf-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+
+  .wf-gallery-item {
+    aspect-ratio: 4 / 3;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  /* ─── 08 MONTHLY CALENDAR ─── */
+  .wf-cal {
+    padding: 72px 48px;
+    background: var(--surface-1);
+  }
+
+  .wf-cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .wf-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+    margin-bottom: 40px;
+  }
+
+  .wf-cal-cell {
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    min-height: 76px;
+    padding: 8px;
+    background: white;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-mid);
+  }
+
+  .wf-cal-cell--other { background: var(--surface-1); color: var(--text-light); }
+  .wf-cal-cell--today { background: white; }
+
+  .wf-cal-event-chip {
+    margin-top: 4px;
+    height: 7px;
+    border-radius: 2px;
+    background: var(--surface-3);
+  }
+
+  .wf-cal-dow {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 4px;
+  }
+
+  .wf-cal-dow-cell {
+    text-align: center;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    padding-bottom: 8px;
+  }
+
+  /* Cal event list */
+  .wf-cal-list {
+    border-top: 1px solid var(--rule);
+    padding-top: 24px;
+  }
+
+  .wf-cal-list-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .wf-cal-list-date {
+    width: 44px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  /* ─── 09 CTA BANNER ─── */
+  .wf-cta {
+    background: var(--dark-sec);
+    padding: 96px 48px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .wf-cta-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  /* ─── 10 FOOTER ─── */
+  .wf-footer {
+    background: #1e1e22;
+    padding: 64px 48px 32px;
+  }
+
+  .wf-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .wf-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* ─── Section label strip ─── */
+  .sec-label-strip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    background: white;
+    border-bottom: 1px solid var(--rule);
+    border-top: 1px solid var(--rule);
+  }
+
+  .sec-num {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-light);
+    letter-spacing: 0.1em;
+    width: 24px;
+  }
+
+  .sec-name {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .sec-note {
+    font-size: 10px;
+    color: var(--text-light);
+    margin-left: auto;
+  }
+
+  /* Mobile breakpoint marker */
+  .breakpoint-bar {
+    background: var(--acc, var(--surface-2));
+    height: 3px;
+    position: relative;
+  }
+
+  /* Responsive indicator chips on hero */
+  .mobile-note {
+    position: absolute;
+    bottom: 60px;
+    right: 16px;
+    background: var(--ann-bg);
+    border: 1px solid var(--ann);
+    color: var(--ann);
+    font-size: 9px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.06em;
+  }
+
+  /* Dark section text helpers */
+  .txt-ghost  { color: rgba(255,255,255,0.18); }
+  .txt-muted  { color: rgba(255,255,255,0.35); }
+  .txt-mid    { color: rgba(255,255,255,0.55); }
+  .txt-bright { color: rgba(255,255,255,0.82); }
+
+  .bar--ghost { background: rgba(255,255,255,0.12); }
+  .bar--light { background: rgba(255,255,255,0.25); }
+
+</style>
+
+<!-- ═══════════════════════════════════════════
+     WIREFRAME DOCUMENT HEADER
+     ═══════════════════════════════════════════ -->
+<div class="wf-header">
+  <div class="wf-header-title">NoMoreHiding.net — Homepage Wireframe</div>
+  <div class="wf-header-meta">
+    <div class="wf-legend">
+      <div class="legend-item"><div class="legend-swatch legend-swatch--img"></div> Image / Video zone</div>
+      <div class="legend-item"><div class="legend-swatch legend-swatch--text"></div> Content placeholder</div>
+      <div class="legend-item"><div class="legend-swatch legend-swatch--dark"></div> Dark-background section</div>
+      <div class="legend-item"><div class="legend-swatch legend-swatch--ann"></div> Design note</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     01 — STICKY NAV
+     ═══════════════════════════════════════════ -->
+<div class="sec-label-strip">
+  <span class="sec-num">01</span>
+  <span class="sec-name">Navigation</span>
+  <span class="sec-note">Sticky · z-index 100 · height 80px · logo left / links right / CTA button</span>
+</div>
+<div class="wf-section">
+  <div class="wf-nav">
+    <div class="wf-nav-logo">NMH Logo</div>
+    <div class="wf-nav-links">
+      <div class="wf-nav-link"></div>
+      <div class="wf-nav-link"></div>
+      <div class="wf-nav-link wf-nav-link--active"></div>
+      <div class="wf-nav-link"></div>
+      <div class="wf-nav-link"></div>
+      <div class="wf-nav-link"></div>
+      &nbsp;&nbsp;
+      <div class="btn-ph btn-ph--fill" style="padding:8px 18px;font-size:10px;">CTA</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     02 — HERO VIDEO CAROUSEL
+     ═══════════════════════════════════════════ -->
+<div class="sec-label-strip">
+  <span class="sec-num">02</span>
+  <span class="sec-name">Hero — Video Carousel</span>
+  <span class="sec-note">Full-width · 560px tall · 3 slides · 5s auto-advance · muted autoplay · poster-frame fallback on mobile</span>
+</div>
+<div class="wf-section">
+  <div class="wf-hero">
+
+    <!-- Video BG placeholder -->
+    <div class="wf-hero-bg img-ph" style="background-size:20px 20px;"></div>
+
+    <!-- Dark overlay + content -->
+    <div class="wf-hero-overlay">
+      <div class="wf-hero-content">
+        <div class="bar bar--sm bar--ghost" style="margin:0 auto 14px;"></div>
+        <div class="bar bar--h1 bar--light" style="width:75%;margin:0 auto 10px;"></div>
+        <div class="bar bar--h1 bar--light" style="width:55%;margin:0 auto 20px;"></div>
+        <div class="bar bar--md bar--ghost" style="margin:0 auto 8px;"></div>
+        <div class="bar bar--sm bar--ghost" style="margin:0 auto 32px;"></div>
+        <div class="btn-ph btn-ph--outline-white" style="margin:0 auto;display:block;width:160px;text-align:center;">Slide CTA</div>
+      </div>
+    </div>
+
+    <!-- Arrows -->
+    <div class="wf-hero-arrow" style="left:28px;">‹</div>
+    <div class="wf-hero-arrow" style="right:28px;">›</div>
+
+    <!-- Slide counter -->
+    <div class="wf-hero-slide-counter">1 / 3</div>
+
+    <!-- Annotation callouts -->
+    <div class="wf-hero-ann">
+      <span class="ann">Adobe Stock video — senior women active / golf / community</span>
+      <span class="ann">5s auto-advance · pause on hover</span>
+      <span class="ann">Each slide: unique eyebrow + headline + CTA tied to video content</span>
+    </div>
+
+    <div class="mobile-note">Mobile → poster frame still image</div>
+
+    <!-- Dot bar -->
+    <div class="wf-hero-dots">
+      <div class="wf-dot wf-dot--active"></div>
+      <div class="wf-dot wf-dot--inactive"></div>
+      <div class="wf-dot wf-dot--inactive"></div>
+    </div>
+
+  </div>
+
+  <!-- Slide content reference table -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--surface-1);border-top:1px solid var(--rule);">
+    <div style="padding:16px 20px;border-right:1px solid var(--rule);">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-light);margin-bottom:6px;">Slide 1</div>
+      <div class="bar bar--h3 bar--md" style="width:60%;margin-bottom:6px;"></div>
+      <div class="bar bar--sm" style="margin-bottom:4px;"></div>
+      <span class="ann" style="font-size:8px;">Women's Golf Retreat</span>
+    </div>
+    <div style="padding:16px 20px;border-right:1px solid var(--rule);">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-light);margin-bottom:6px;">Slide 2</div>
+      <div class="bar bar--h3 bar--md" style="width:60%;margin-bottom:6px;"></div>
+      <div class="bar bar--sm" style="margin-bottom:4px;"></div>
+      <span class="ann" style="font-size:8px;">Live Whole. Live Seen. Live Free.</span>
+    </div>
+    <div style="padding:16px 20px;">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-light);margin-bottom:6px;">Slide 3</div>
+      <div class="bar bar--h3 bar--md" style="width:60%;margin-bottom:6px;"></div>
+      <div class="bar bar--sm" style="margin-bottom:4px;"></div>
+      <span class="ann" style="font-size:8px;">NMH Intensive Workshop</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     03 — STAT STRIP
+     ═══════════════════════════════════════════ -->
+<div class="sec-label-strip">
+  <span class="sec-num">03</span>
+  <span class="sec-name">Social Proof — Stat Strip</span>
+  <span class="sec-note">Dark background · 4 stats · e.g. Women Served / Years / Events / Cities</span>
+</div>
+<div class="wf-section wf-section--dark">
+  <div class="wf-stats">
+    <div class="wf-stat">
+      <div class="wf-stat-num txt-bright">5K+</div>
+      <div class="bar bar--sm bar--ghost" style="margin:0 auto;"></div>
+    </div>
+    <div class="wf-stat">
+      <div class="wf-stat-num txt-bright">12</div>
+      <div class="bar bar--sm bar--ghost" style="margin:0 auto;"></div>
+    </div>
+    <div class="wf-stat">
+      <div class="wf-stat-num txt-bright">50+</div>
+      <div class="bar bar--sm bar--ghost" style="margin:0 auto;"></div>
+    </div>
+    <div class="wf-stat">
+      <div class="wf-stat-num txt-bright">20</div>
+      <div class="bar bar--sm bar--ghost" style="margin:0 auto;"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     04 — ABOUT PREVIEW (split)
+     ═══════════════════════════════════════════ -->
+<div class="sec-label-strip">
+  <span class="sec-num">04</span>
+  <span class="sec-name">About Preview</span>
+  <span class="sec-note">2-col split · photo left (portrait) · text right · links to /about</span>
+</div>
+<div class="wf-section">
+  <div class="wf-about">
+    <div class="wf-about-img img-ph" style="flex:0 0 480px;">
+      <div class="img-ph-label">Renetta — Portrait Photo</div>
+    </div>
+    <div class="wf-about-text">
+      <div class="bar bar--sm" style="width:28%;"></div>
+      <div class="bar bar--h2" style="width:65%;"></div>
+      <div class="bar bar--h2" style="width:50%;"></div>
+      <div style="height:8px;"></div>
+      <div class="bar bar--xl"></div>
+      <div class="bar bar--lg"></div>
+      <div class="bar bar--xl"></div>
+      <div class="bar bar--md"></div>
+      <div style="height:4px;"></div>
+      <div class="bar bar--xl"></div>
+      <div class="bar bar--lg"></div>
+      <div class="bar bar--xl"></div>
+      <div class="bar bar--sm"></div>
+      <div style="height:8px;"></div>
+      <div style="font-size:11px;color:var(--text-light);font-style:italic;margin-bottom:16px;">— Author signature line</div>
+      <div class="btn-ph" style="width:fit-content;">Learn More →</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     05 — PULL QUOTE
+     ═══════════════════════════════════════════ -->
+<div class="sec-label-strip">
+  <span class="sec-num">05</span>
+  <span class="sec-name">Pull Quote</span>
+  <span class="sec-note">Dark background · large serif italic quote · attributed to Renetta</span>
+</div>
+<div class="wf-section wf-section--dark">
+  <div class="wf-pq">
+    <div class="bar bar--light" style="width:72%;height:18px;margin-bottom:8px;"></div>
+    <div class="bar bar--light" style="width:58%;height:18px;margin-bottom:8px;"></div>
+    <div class="bar bar--light" style="width:40%;height:18px;margin-bottom:20px;"></div>
+    <div class="bar bar--ghost" style="width:22%;height:8px;"></div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     06 — BLOG CARD CAROUSEL
+     ═══════════════════════════════════════════ -->
+<div class="sec-label-strip">
+  <span class="sec-num">06</span>
+  <span class="sec-name">Blog Card Carousel</span>
+  <span class="sec-note">Gray background · "From the Blog / Latest Stories" · 3 cards visible · prev/next · pages through 6 posts</span>
+</div>
+<div class="wf-section">
+  <div class="wf-blog">
+    <div class="wf-blog-header">
+      <div>
+        <div class="bar bar--sm" style="width:120px;margin-bottom:8px;"></div>
+        <div class="bar bar--h2" style="width:260px;"></div>
+      </div>
+      <div class="wf-blog-nav">
+        <div style="font-size:10px;color:var(--text-light);margin-right:4px;">1–3 of 6</div>
+        <div class="wf-blog-nav-btn">‹</div>
+        <div class="wf-blog-nav-btn">›</div>
+      </div>
+    </div>
+    <div class="wf-cards">
+      <div class="wf-card">
+        <div class="img-ph" style="height:200px;"><div class="img-ph-label">Blog Photo</div></div>
+        <div class="wf-card-body">
+          <div class="bar bar--sm" style="width:90px;"></div>
+          <div class="bar bar--h3 bar--lg"></div>
+          <div class="bar bar--h3" style="width:80%;"></div>
+          <div class="bar bar--xl"></div>
+          <div class="bar bar--lg"></div>
+          <div class="bar bar--sm" style="margin-top:4px;width:100px;"></div>
+        </div>
+      </div>
+      <div class="wf-card">
+        <div class="img-ph" style="height:200px;"><div class="img-ph-label">Blog Photo</div></div>
+        <div class="wf-card-body">
+          <div class="bar bar--sm" style="width:90px;"></div>
+          <div class="bar bar--h3 bar--lg"></div>
+          <div class="bar bar--h3" style="width:70%;"></div>
+          <div class="bar bar--xl"></div>
+          <div class="bar bar--md"></div>
+          <div class="bar bar--sm" style="margin-top:4px;width:100px;"></div>
+        </div>
+      </div>
+      <div class="wf-card">
+        <div class="img-ph" style="height:200px;"><div class="img-ph-label">Blog Photo</div></div>
+        <div class="wf-card-body">
+          <div class="bar bar--sm" style="width:90px;"></div>
+          <div class="bar bar--h3 bar--xl"></div>
+          <div class="bar bar--h3" style="width:60%;"></div>
+          <div class="bar bar--xl"></div>
+          <div class="bar bar--lg"></div>
+          <div class="bar bar--sm" style="margin-top:4px;width:100px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     07 — PHOTO GALLERY GRID
+     ═══════════════════════════════════════════ -->
+<div class="sec-label-strip">
+  <span class="sec-num">07</span>
+  <span class="sec-name">Photo Gallery Grid</span>
+  <span class="sec-note">White background · "Our Community / Moments That Matter" · 3×2 grid · hover overlay · lightbox · "View Full Gallery" CTA</span>
+</div>
+<div class="wf-section">
+  <div class="wf-gallery">
+    <div class="wf-gallery-header">
+      <div class="bar bar--sm" style="width:140px;margin:0 auto 10px;"></div>
+      <div class="bar bar--h2" style="width:340px;margin:0 auto;"></div>
+    </div>
+    <div class="wf-gallery-grid" style="max-width:1100px;margin:0 auto 40px;">
+      <div class="wf-gallery-item img-ph"><div class="img-ph-label">Community Photo</div></div>
+      <div class="wf-gallery-item img-ph"><div class="img-ph-label">Community Photo</div></div>
+      <div class="wf-gallery-item img-ph"><div class="img-ph-label">Community Photo</div></div>
+      <div class="wf-gallery-item img-ph"><div class="img-ph-label">Community Photo</div></div>
+      <div class="wf-gallery-item img-ph"><div class="img-ph-label">Community Photo</div></div>
+      <div class="wf-gallery-item img-ph"><div class="img-ph-label">Community Photo</div></div>
+    </div>
+    <div style="text-align:center;">
+      <div class="btn-ph btn-ph--fill" style="display:inline-block;">View Full Gallery</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     08 — UPCOMING EVENTS / CALENDAR
+     ═══════════════════════════════════════════ -->
+<div class="sec-label-strip">
+  <span class="sec-num">08</span>
+  <span class="sec-name">Monthly Calendar + Event List</span>
+  <span class="sec-note">Light background · month navigation · 7-col grid · event chips on days · scrollable list below</span>
+</div>
+<div class="wf-section">
+  <div class="wf-cal">
+    <div style="max-width:1080px;margin:0 auto;">
+      <div class="bar bar--sm" style="width:130px;margin-bottom:10px;"></div>
+      <div class="bar bar--h2" style="width:280px;margin-bottom:32px;"></div>
+
+      <!-- Month nav -->
+      <div class="wf-cal-header">
+        <div class="bar bar--h2" style="width:200px;"></div>
+        <div style="display:flex;gap:8px;">
+          <div class="wf-blog-nav-btn">‹</div>
+          <div class="wf-blog-nav-btn">›</div>
+        </div>
+      </div>
+
+      <!-- DOW header -->
+      <div class="wf-cal-dow">
+        <div class="wf-cal-dow-cell">Sun</div>
+        <div class="wf-cal-dow-cell">Mon</div>
+        <div class="wf-cal-dow-cell">Tue</div>
+        <div class="wf-cal-dow-cell">Wed</div>
+        <div class="wf-cal-dow-cell">Thu</div>
+        <div class="wf-cal-dow-cell">Fri</div>
+        <div class="wf-cal-dow-cell">Sat</div>
+      </div>
+
+      <!-- Calendar grid — 5 rows -->
+      <div class="wf-cal-grid">
+        <!-- Row 1 -->
+        <div class="wf-cal-cell wf-cal-cell--other">27</div>
+        <div class="wf-cal-cell wf-cal-cell--other">28</div>
+        <div class="wf-cal-cell wf-cal-cell--other">29</div>
+        <div class="wf-cal-cell wf-cal-cell--other">30</div>
+        <div class="wf-cal-cell">1</div>
+        <div class="wf-cal-cell">2</div>
+        <div class="wf-cal-cell">3<div class="wf-cal-event-chip" style="background:#d4e6cd;"></div></div>
+        <!-- Row 2 -->
+        <div class="wf-cal-cell">4</div>
+        <div class="wf-cal-cell">5</div>
+        <div class="wf-cal-cell">6</div>
+        <div class="wf-cal-cell">7</div>
+        <div class="wf-cal-cell">8</div>
+        <div class="wf-cal-cell">9</div>
+        <div class="wf-cal-cell">10<div class="wf-cal-event-chip" style="background:#f8d4cd;"></div></div>
+        <!-- Row 3 -->
+        <div class="wf-cal-cell">11</div>
+        <div class="wf-cal-cell">12</div>
+        <div class="wf-cal-cell">13</div>
+        <div class="wf-cal-cell">14</div>
+        <div class="wf-cal-cell">15</div>
+        <div class="wf-cal-cell">16</div>
+        <div class="wf-cal-cell wf-cal-cell--today" style="border:2px solid var(--surface-4);">17<div class="wf-cal-event-chip" style="background:#f8d4cd;"></div><div class="wf-cal-event-chip" style="background:#cdd8e6;"></div></div>
+        <!-- Row 4 -->
+        <div class="wf-cal-cell">18</div>
+        <div class="wf-cal-cell">19</div>
+        <div class="wf-cal-cell">20</div>
+        <div class="wf-cal-cell">21</div>
+        <div class="wf-cal-cell">22<div class="wf-cal-event-chip" style="background:#cdd8e6;"></div></div>
+        <div class="wf-cal-cell">23</div>
+        <div class="wf-cal-cell">24</div>
+        <!-- Row 5 -->
+        <div class="wf-cal-cell">25</div>
+        <div class="wf-cal-cell">26</div>
+        <div class="wf-cal-cell">27</div>
+        <div class="wf-cal-cell">28</div>
+        <div class="wf-cal-cell">29</div>
+        <div class="wf-cal-cell">30</div>
+        <div class="wf-cal-cell">31<div class="wf-cal-event-chip" style="background:#d4e6cd;"></div></div>
+      </div>
+
+      <!-- Event list -->
+      <div class="wf-cal-list">
+        <div class="bar bar--h3" style="width:120px;margin-bottom:16px;"></div>
+        <div class="wf-cal-list-row">
+          <div class="wf-cal-list-date"><div style="font-size:22px;font-weight:700;color:var(--text-mid);">3</div><div style="font-size:9px;color:var(--text-light);">SAT</div></div>
+          <div style="width:9px;height:9px;border-radius:50%;background:#d4e6cd;flex-shrink:0;"></div>
+          <div style="flex:1"><div class="bar bar--md" style="margin-bottom:5px;"></div><div class="bar bar--sm" style="width:55%;"></div></div>
+          <div class="btn-ph" style="padding:6px 14px;font-size:9px;">Learn More</div>
+        </div>
+        <div class="wf-cal-list-row">
+          <div class="wf-cal-list-date"><div style="font-size:22px;font-weight:700;color:var(--text-mid);">10</div><div style="font-size:9px;color:var(--text-light);">SAT</div></div>
+          <div style="width:9px;height:9px;border-radius:50%;background:#f8d4cd;flex-shrink:0;"></div>
+          <div style="flex:1"><div class="bar bar--lg" style="margin-bottom:5px;"></div><div class="bar bar--sm" style="width:60%;"></div></div>
+          <div class="btn-ph" style="padding:6px 14px;font-size:9px;">Learn More</div>
+        </div>
+        <div class="wf-cal-list-row">
+          <div class="wf-cal-list-date"><div style="font-size:22px;font-weight:700;color:var(--text-mid);">17</div><div style="font-size:9px;color:var(--text-light);">SAT</div></div>
+          <div style="width:9px;height:9px;border-radius:50%;background:#f8d4cd;flex-shrink:0;"></div>
+          <div style="flex:1"><div class="bar bar--xl" style="margin-bottom:5px;"></div><div class="bar bar--sm" style="width:50%;"></div></div>
+          <div class="btn-ph" style="padding:6px 14px;font-size:9px;">Register</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     09 — CTA BANNER
+     ═══════════════════════════════════════════ -->
+<div class="sec-label-strip">
+  <span class="sec-num">09</span>
+  <span class="sec-name">CTA Banner</span>
+  <span class="sec-note">Dark background · large headline · 2 buttons: primary action + secondary link</span>
+</div>
+<div class="wf-section wf-section--dark">
+  <div class="wf-cta">
+    <div class="bar bar--ghost" style="width:160px;height:8px;"></div>
+    <div class="bar bar--light" style="width:480px;height:22px;margin-bottom:4px;"></div>
+    <div class="bar bar--light" style="width:360px;height:22px;"></div>
+    <div class="bar bar--ghost" style="width:340px;height:10px;margin-bottom:8px;"></div>
+    <div class="bar bar--ghost" style="width:280px;height:10px;"></div>
+    <div class="wf-cta-actions">
+      <div class="btn-ph btn-ph--fill">Primary CTA</div>
+      <div class="btn-ph btn-ph--outline-white">Secondary Link</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     10 — FOOTER
+     ═══════════════════════════════════════════ -->
+<div class="sec-label-strip">
+  <span class="sec-num">10</span>
+  <span class="sec-name">Footer</span>
+  <span class="sec-note">Darkest background · 4-col grid: logo+social / Quick Links / Resources / Contact · bottom bar: copyright + legal links</span>
+</div>
+<div class="wf-section">
+  <div class="wf-footer">
+    <div class="wf-footer-grid">
+      <!-- Col 1: Brand -->
+      <div>
+        <div style="width:100px;height:44px;background:rgba(255,255,255,0.08);border-radius:3px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-size:9px;color:rgba(255,255,255,0.3);font-weight:700;letter-spacing:0.1em;">LOGO</div>
+        <div class="bar bar--xl bar--ghost" style="margin-bottom:6px;"></div>
+        <div class="bar bar--lg bar--ghost" style="margin-bottom:6px;"></div>
+        <div class="bar bar--md bar--ghost" style="margin-bottom:20px;"></div>
+        <div style="display:flex;gap:8px;">
+          <div style="width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.12);"></div>
+          <div style="width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.12);"></div>
+          <div style="width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.12);"></div>
+        </div>
+      </div>
+      <!-- Col 2 -->
+      <div>
+        <div class="bar bar--light" style="width:90px;height:9px;margin-bottom:16px;"></div>
+        <div class="bar bar--ghost" style="margin-bottom:10px;"></div>
+        <div class="bar bar--ghost" style="margin-bottom:10px;"></div>
+        <div class="bar bar--ghost" style="margin-bottom:10px;"></div>
+        <div class="bar bar--ghost" style="margin-bottom:10px;"></div>
+        <div class="bar bar--ghost" style="margin-bottom:10px;"></div>
+      </div>
+      <!-- Col 3 -->
+      <div>
+        <div class="bar bar--light" style="width:90px;height:9px;margin-bottom:16px;"></div>
+        <div class="bar bar--ghost" style="margin-bottom:10px;"></div>
+        <div class="bar bar--ghost" style="margin-bottom:10px;"></div>
+        <div class="bar bar--ghost" style="margin-bottom:10px;"></div>
+        <div class="bar bar--ghost" style="margin-bottom:10px;"></div>
+      </div>
+      <!-- Col 4 -->
+      <div>
+        <div class="bar bar--light" style="width:80px;height:9px;margin-bottom:16px;"></div>
+        <div class="bar bar--ghost" style="margin-bottom:10px;"></div>
+        <div class="bar bar--ghost" style="margin-bottom:10px;"></div>
+        <div class="bar bar--ghost" style="margin-bottom:10px;"></div>
+      </div>
+    </div>
+    <div class="wf-footer-bottom">
+      <div class="bar bar--ghost" style="width:240px;height:8px;"></div>
+      <div style="display:flex;gap:20px;">
+        <div class="bar bar--ghost" style="width:60px;height:8px;"></div>
+        <div class="bar bar--ghost" style="width:60px;height:8px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE SUMMARY
+     ═══════════════════════════════════════════ -->
+<div style="background:white;border-top:2px solid var(--rule);padding:32px 32px 40px;">
+  <div style="max-width:860px;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;">Page Summary — 10 Sections</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;">
+      <div style="font-size:11px;color:var(--text-mid);padding:10px;background:var(--surface-1);border-radius:3px;"><strong>01</strong> Sticky Nav</div>
+      <div style="font-size:11px;color:var(--text-mid);padding:10px;background:var(--surface-1);border-radius:3px;"><strong>02</strong> Video Carousel Hero</div>
+      <div style="font-size:11px;color:var(--text-mid);padding:10px;background:var(--surface-1);border-radius:3px;"><strong>03</strong> Stat Strip</div>
+      <div style="font-size:11px;color:var(--text-mid);padding:10px;background:var(--surface-1);border-radius:3px;"><strong>04</strong> About Preview</div>
+      <div style="font-size:11px;color:var(--text-mid);padding:10px;background:var(--surface-1);border-radius:3px;"><strong>05</strong> Pull Quote</div>
+      <div style="font-size:11px;color:var(--text-mid);padding:10px;background:var(--surface-1);border-radius:3px;"><strong>06</strong> Blog Carousel</div>
+      <div style="font-size:11px;color:var(--text-mid);padding:10px;background:var(--surface-1);border-radius:3px;"><strong>07</strong> Photo Gallery</div>
+      <div style="font-size:11px;color:var(--text-mid);padding:10px;background:var(--surface-1);border-radius:3px;"><strong>08</strong> Calendar + Events</div>
+      <div style="font-size:11px;color:var(--text-mid);padding:10px;background:var(--surface-1);border-radius:3px;"><strong>09</strong> CTA Banner</div>
+      <div style="font-size:11px;color:var(--text-mid);padding:10px;background:var(--surface-1);border-radius:3px;"><strong>10</strong> Footer</div>
+    </div>
+  </div>
+</div>

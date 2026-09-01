@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog — Stories, Insight &amp; Inspiration | no more hiding™</title>
+    <meta
+      name="description"
+      content="Real stories, honest insight, and inspiration for women in midlife. The no more hiding™ blog covers self-discovery, community, caregiving, and living fully."
+    />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+  </head>
+
+  <body data-page="blog">
+    <!-- Skip to main content (accessibility) -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Nav injected by js/includes.js -->
+    <div id="site-nav"></div>
+
+    <main id="main-content">
+
+      <!-- ═══════════════════════════════════════════════════════
+           BLOG HERO CAROUSEL
+           3 slides, 6-second auto-advance, matching homepage pattern.
+           Slides populated by blog-render.js from blog-data.js.
+           The live region announces slide changes to screen readers.
+      ══════════════════════════════════════════════════════════ -->
+      <section
+        class="blog-hero"
+        aria-label="Featured blog posts"
+        data-testid="blog-hero-carousel"
+      >
+        <!-- Slides injected here by blog-render.js -->
+        <div
+          id="blog-hero-slides"
+          class="blog-hero-slides"
+          data-testid="blog-hero-slides"
+        ></div>
+
+        <!-- Overlay always present -->
+        <div class="blog-hero-overlay" aria-hidden="true"></div>
+
+        <!-- Content panel — updates as slides change -->
+        <div class="blog-hero-content" aria-live="polite" aria-atomic="true">
+          <div id="blog-hero-category" class="blog-hero-category" data-testid="blog-hero-category"></div>
+          <p  id="blog-hero-title"    class="blog-hero-title"    data-testid="blog-hero-title"></p>
+          <p  id="blog-hero-excerpt"  class="blog-hero-excerpt"  data-testid="blog-hero-excerpt"></p>
+          <a  id="blog-hero-cta"      class="blog-hero-cta no-ext-icon" href="#" data-testid="blog-hero-cta">
+            Read the Story <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- Dot navigation — injected by blog-render.js -->
+        <div
+          id="blog-hero-dots"
+          class="blog-hero-dots"
+          role="tablist"
+          aria-label="Select featured post"
+          data-testid="blog-hero-dots"
+        ></div>
+
+        <!-- Prev / Next buttons -->
+        <button
+          class="blog-hero-btn blog-hero-btn--prev"
+          aria-label="Previous featured post"
+          data-testid="blog-hero-prev-btn"
+          type="button"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               aria-hidden="true" focusable="false">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button
+          class="blog-hero-btn blog-hero-btn--next"
+          aria-label="Next featured post"
+          data-testid="blog-hero-next-btn"
+          type="button"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               aria-hidden="true" focusable="false">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </section>
+      <!-- /.blog-hero -->
+
+
+      <!-- ═══════════════════════════════════════════════════════
+           MORE STORIES GRID
+           All posts beyond the featured set, rendered as post-cards.
+           When only 3 posts exist this section will be empty and
+           will show a friendly message instead.
+      ══════════════════════════════════════════════════════════ -->
+      <section
+        class="blog-all-posts"
+        aria-labelledby="blog-posts-heading"
+        data-testid="blog-posts-section"
+      >
+        <div class="blog-all-posts-header">
+          <div class="card-carousel-label">From the Blog</div>
+          <h2 id="blog-posts-heading" class="card-carousel-title">
+            More Stories
+          </h2>
+        </div>
+
+        <div
+          id="blog-posts-grid"
+          class="card-carousel-grid"
+          role="list"
+          aria-label="All blog posts"
+          data-testid="blog-posts-grid"
+        ></div>
+
+        <p id="blog-posts-empty" class="blog-posts-empty" hidden>
+          More stories are on the way. Check back soon.
+        </p>
+      </section>
+      <!-- /.blog-all-posts -->
+
+    </main>
+
+    <!-- Footer injected by js/includes.js -->
+    <div id="site-footer"></div>
+
+    <!-- ── DATA + SCRIPTS ─────────────────────────────────────
+         Load order matters:
+         1. blog-data.js  — defines NMH_POSTS array
+         2. blog-render.js — reads NMH_POSTS, builds hero + grid + runs carousel
+         3. includes.js   — injects nav / footer
+         4. global.js     — external links, scroll-to-top
+    ──────────────────────────────────────────────────────── -->
+    <script src="/js/blog-data.js"></script>
+    <script src="/js/blog-render.js"></script>
+    <script src="/js/includes.js"></script>
+    <script src="/js/global.js"></script>
+  </body>
+</html>

@@ -1,0 +1,437 @@
+/* =============================================================
+   global.css — No More Hiding
+   Site-wide tokens, reset, base typography, and utilities.
+   Link this FIRST on every page, before components.css.
+   ============================================================= */
+
+/* ── CUSTOM PROPERTIES (Design Tokens) ───────────────────────
+   Edit here to update the whole site at once.
+   ─────────────────────────────────────────────────────────── */
+:root {
+  /* Brand colors */
+  --color-salmon:       #F8A491;   /* primary accent */
+  --color-salmon-dark:  #d98070;   /* hover / pressed state */
+  --color-sage:         #B7C7A4;   /* secondary accent */
+  --color-charcoal:     #4A4A4A;   /* body text, dark backgrounds */
+  --color-charcoal-mid: #2e2e2e;   /* footer background */
+  --color-gray-light:   #F3F3F3;   /* section backgrounds, borders */
+  --color-cream:        #fdf8f6;   /* hero / warm page backgrounds */
+  --color-white:        #ffffff;
+
+  /* Typography */
+  --font-serif:   'Cormorant Garamond', Georgia, serif;
+  --font-sans:    'Lato', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Spacing scale */
+  --space-xs:   8px;
+  --space-sm:   16px;
+  --space-md:   24px;
+  --space-lg:   48px;
+  --space-xl:   64px;
+  --space-2xl:  100px;
+
+  /* Section padding (used in components.css) */
+  --section-pad-v:  100px;
+  --section-pad-h:  64px;
+
+  /* Border radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+
+  /* Transitions */
+  --transition: 0.2s ease;
+}
+
+
+/* ── RESET ────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+
+/* ── BASE ─────────────────────────────────────────────────── */
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-charcoal);
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-salmon);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--color-salmon-dark);
+}
+
+
+/* ── TYPOGRAPHY ───────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-charcoal);
+}
+
+h1 { font-size: clamp(40px, 6vw, 86px); }
+h2 { font-size: clamp(28px, 4vw, 48px); }
+h3 { font-size: clamp(20px, 2.5vw, 26px); }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+
+p {
+  font-weight: 300;
+  line-height: 1.8;
+  color: #6a6a6a;
+}
+
+p + p {
+  margin-top: var(--space-sm);
+}
+
+em { font-style: italic; }
+
+strong {
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+
+/* ── UTILITY CLASSES ─────────────────────────────────────── */
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--section-pad-h);
+  padding-right: var(--section-pad-h);
+}
+
+/* Eyebrow / overline label */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+.eyebrow--salmon {
+
+.eyebrow--sage {
+  color: var(--color-sage);
+}
+  color: var(--color-salmon);
+}
+
+/* Decorative inline rule before/after eyebrow */
+.eyebrow-rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eyebrow-rule::before {
+  content: '';
+  flex: 0 0 28px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+/* Section headings */
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-salmon);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 48px);
+  line-height: 1.08;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin-bottom: 24px;
+}
+
+.section-title em {
+  color: var(--color-salmon);
+  font-style: italic;
+}
+
+/* Body copy helper */
+.body-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #6a6a6a;
+  font-weight: 300;
+  margin-bottom: var(--space-sm);
+}
+
+.body-text strong {
+  font-weight: 700;
+  color: var(--color-charcoal);
+}
+
+/* Signature / italic flourish */
+.signature {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--color-sage);
+  font-style: italic;
+  margin-top: var(--space-xs);
+}
+
+/* ── BUTTONS ─────────────────────────────────────────────── */
+
+/* Filled — salmon (primary) */
+.btn {
+  display: inline-block;
+  padding: 15px 36px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn--salmon {
+  background: var(--color-salmon);
+  color: var(--color-white);
+}
+
+.btn--salmon:hover {
+  background: var(--color-salmon-dark);
+  color: var(--color-white);
+}
+
+/* Filled — dark (charcoal) */
+.btn--dark {
+  background: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+.btn--dark:hover {
+  background: var(--color-salmon);
+  color: var(--color-white);
+}
+
+/* Filled — sage (secondary) */
+.btn--sage {
+  background: var(--color-sage);
+  color: var(--color-white);
+}
+
+.btn--sage:hover {
+  background: #9ab087;
+  color: var(--color-white);
+}
+
+/* Filled — white (for dark backgrounds) */
+.btn--white {
+  background: var(--color-white);
+  color: var(--color-charcoal);
+}
+
+.btn--white:hover {
+  background: var(--color-salmon);
+  color: var(--color-white);
+}
+
+/* Outlined — salmon */
+.btn--outline {
+  background: transparent;
+  border: 2px solid var(--color-salmon);
+  color: var(--color-salmon);
+}
+
+.btn--outline:hover {
+  background: var(--color-salmon);
+  color: var(--color-white);
+}
+
+/* Outlined — white (for dark backgrounds) */
+.btn--outline-white {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: var(--color-white);
+}
+
+.btn--outline-white:hover {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+/* Text / underline button */
+.btn--text {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  border-bottom: 2px solid var(--color-sage);
+  padding: 0 0 3px;
+  background: none;
+  border-radius: 0;
+}
+
+.btn--text:hover {
+  color: var(--color-sage);
+}
+
+/* Ghost / text for dark backgrounds */
+.btn--ghost {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+  padding: 0 0 3px;
+  background: none;
+  border-radius: 0;
+}
+
+.btn--ghost:hover {
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* ── IMAGE PLACEHOLDER (remove once real photos are in) ───── */
+.img-placeholder {
+  background: var(--color-gray-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #bbb;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: var(--font-sans);
+}
+
+.img-placeholder svg {
+  opacity: 0.4;
+}
+
+
+/* ── ACCESSIBILITY ────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-salmon);
+  outline-offset: 3px;
+}
+
+
+/* ── RESPONSIVE CONTAINER ADJUSTMENTS ────────────────────── */
+@media (max-width: 1100px) {
+  :root {
+    --section-pad-h: 40px;
+    --section-pad-v: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-pad-h: 24px;
+    --section-pad-v: 60px;
+  }
+
+  h1 { font-size: clamp(34px, 8vw, 56px); }
+  h2 { font-size: clamp(26px, 6vw, 36px); }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-pad-h: 20px;
+    --section-pad-v: 48px;
+  }
+
+  h1 { font-size: 34px; }
+  h2 { font-size: 28px; }
+}
+
+/* ── Skip-to-content link (accessibility) ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  background: var(--color-salmon);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 0 0 4px 4px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
+
+/* ── External link indicator ──────────────────────────────────
+   Automatically adds ↗ after any link that opens in a new tab.
+   Suppress on buttons/chips that have their own styling with .no-ext-icon
+   ─────────────────────────────────────────────────────────── */
+a[target="_blank"]:not(.no-ext-icon)::after {
+  content: '\00a0↗';      /* non-breaking space + arrow */
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 1;
+  opacity: 0.75;
+}

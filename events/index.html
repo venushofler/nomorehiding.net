@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | No More Hiding</title>
+  <meta name="description" content="Join No More Hiding community events — brunches, retreats, intensives, and more. See what's coming up this month.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lato:wght@300;400;700&display=swap">
+
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/components.css"></head>
+<body data-page="events">
+
+  <div id="site-nav" data-testid="site-nav" role="banner"></div>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <main id="main-content" data-testid="main-content">
+
+    <!-- ═══════════════════════════════════════════════════════
+         PAGE HERO
+    ══════════════════════════════════════════════════════════ -->
+    <section class="page-hero" aria-label="Events page hero" data-testid="page-hero">
+      <div class="page-hero-inner">
+        <div class="page-hero-eyebrow eyebrow">Community</div>
+        <h1 class="page-hero-title">Events</h1>
+        <p class="page-hero-subtitle">Come as you are. Leave as more.</p>
+      </div>
+
+      <section class="flyer-section" aria-labelledby="flyer-heading" data-testid="flyer-section">
+      <div class="flyer-header">
+        <div class="gallery-eyebrow">Community</div>
+        <h2 id="flyer-heading" class="gallery-title">Upcoming Events</h2>
+      </div>
+
+      <div class="flyer-grid" role="list" aria-label="Upcoming event flyers" data-testid="flyer-grid">
+
+        <!-- Event 1: Color Outside the Lines -->
+        <a
+          class="flyer-item flyer-item--square"
+          href="https://www.eventbrite.com/e/color-outside-the-lines-a-sip-snack-paint-experience-tickets-1992692301315"
+          target="_blank"
+          rel="noopener"
+          role="listitem"
+          aria-label="Color Outside the Lines — Sip, Snack &amp; Paint — Oct 24. Register on Eventbrite."
+          data-testid="flyer-item-1"
+        >
+          <div class="flyer-img-wrap">
+            <img
+              src="/images/events/color-outside-the-lines-flyer.png"
+              alt="Color Outside the Lines: A Sip, Snack &amp; Paint Experience — Saturday October 24, 2026"
+              loading="lazy"
+            >
+            <div class="flyer-overlay" aria-hidden="true">
+              <span class="flyer-overlay-label">Register Now →</span>
+            </div>
+          </div>
+          <div class="flyer-caption">
+            <div class="flyer-caption-title">Color Outside the Lines</div>
+            <div class="flyer-caption-meta">Sat, Oct 24 &nbsp;·&nbsp; Gambrills, MD</div>
+          </div>
+        </a>
+
+        <!-- Event 2: Friendsgiving @ The Winery -->
+        <a
+          class="flyer-item flyer-item--square"
+          href="https://www.eventbrite.com/e/friendsgiving-the-winery-tickets-1998302663058?aff=ebdsoporgprofile"
+          role="listitem"
+          aria-label="Friendsgiving at The Winery — Nov 28. See details."
+          data-testid="flyer-item-2"
+        >
+          <div class="flyer-img-wrap">
+            <img
+              src="/images/events/friendsgiving-flyer.png"
+              alt="Friendsgiving at The Winery — Saturday November 28, 2026"
+              loading="lazy"
+            >
+            <div class="flyer-overlay" aria-hidden="true">
+              <span class="flyer-overlay-label">Register Now →</span>
+            </div>
+          </div>
+          <div class="flyer-caption">
+            <div class="flyer-caption-title">Friendsgiving @ The Winery</div>
+            <div class="flyer-caption-meta">Sat, Nov 28 &nbsp;·&nbsp; Winery at Bull Run</div>
+          </div>
+        </a>
+
+        <!-- Event 3: Placeholder announcing 2027 events in progress -->
+        <a
+          class="flyer-item flyer-item--square"
+          href=""
+          role="listitem"
+          aria-label="Friendsgiving at The Winery — Nov 28. See details."
+          data-testid="flyer-item-2"
+        >
+          <div class="flyer-img-wrap">
+            <img
+              src="/images/events/2027-events-coming-soon.png"
+              alt="2027 Calendar of Events — Coming Soon"
+              loading="lazy"
+            >
+            <div class="flyer-overlay" aria-hidden="true">
+              <!-- <span class="flyer-overlay-label">See Details →</span> -->
+            </div>
+          </div>
+          <div class="flyer-caption">
+            <div class="flyer-caption-title">2027 Calendar of Events — Coming Soon</div>
+            <div class="flyer-caption-meta">2027 Calendar of Events — Coming Soon</div>
+          </div>
+        </a>
+
+      </div>
+
+      </div>
+      
+        
+      <!-- /.flyer-grid -->
+
+      <div class="flyer-cta-wrap">
+        <a href="#events-calendar" class="btn btn--outline" data-testid="flyer-view-all">
+          View All Events <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         UPCOMING EVENTS LIST
+    ══════════════════════════════════════════════════════════ -->
+    <section
+      id="events-calendar"
+      class="upcoming-events-section"
+      aria-labelledby="upcoming-events-heading"
+      data-testid="upcoming-events-list"
+    >
+      <div class="upcoming-events-inner">
+        <div class="cal-header-wrap">
+          <div class="cal-section-label">What's Coming Up</div>
+          <h2 id="upcoming-events-heading" class="cal-section-title">All Upcoming Events</h2>
+        </div>
+        <div id="upcoming-event-cards" role="list" aria-label="All upcoming events"></div>
+      </div>
+    </section>
+
+
+    
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="/js/includes.js"></script>
+  <script src="/js/events.js"></script>
+<script src="/js/global.js"></script>
+</body>
+</html>

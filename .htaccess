@@ -1,0 +1,138 @@
+# ================================================================
+# no more hiding™ — Apache Configuration
+# Host: GreenGeeks (Apache)
+# Last updated: August 30, 2026
+#
+# Handles:
+#   1. Clean URLs (no .html extension)
+#   2. HTTPS enforcement
+#   3. www → non-www redirect
+#   4. Security headers
+#   5. Browser caching
+#   6. Gzip compression
+#   7. Custom error pages
+# ================================================================
+
+Options -Indexes
+RewriteEngine On
+
+
+# ── 1. HTTPS ENFORCEMENT ────────────────────────────────────────
+# Force all traffic to HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+# ── 2. WWW → NON-WWW ────────────────────────────────────────────
+# Redirect www.nomorehiding.net → nomorehiding.net
+RewriteCond %{HTTP_HOST} ^www\.nomorehiding\.net [NC]
+RewriteRule ^ https://nomorehiding.net%{REQUEST_URI} [L,R=301]
+
+
+# ── 3. CLEAN URLS ───────────────────────────────────────────────
+# Serve /page → /page/index.html or /page.html without redirect.
+# Order matters: directory index first, then .html file.
+
+# If the request is already a real file or directory, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# If /path/ maps to /path/index.html, serve it
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.+?)/?$ $1/index.html [L]
+
+# If /path maps to /path.html, serve it
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+
+# ── 4. TRAILING SLASH NORMALIZATION ─────────────────────────────
+# Ensure /blog/living-single and /blog/living-single/ both work.
+# The clean URL rules above handle this — no additional rule needed.
+
+
+# ── 5. SECURITY HEADERS ─────────────────────────────────────────
+<IfModule mod_headers.c>
+  # Prevent clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Prevent MIME sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Enable XSS protection in older browsers
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # Referrer policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Remove server signature
+  Header unset Server
+  Header unset X-Powered-By
+</IfModule>
+
+
+# ── 6. BROWSER CACHING ──────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # HTML — short cache, changes frequently
+  ExpiresByType text/html                  "access plus 1 hour"
+
+  # CSS and JavaScript — longer cache, use versioned filenames to bust
+  ExpiresByType text/css                   "access plus 1 month"
+  ExpiresByType application/javascript     "access plus 1 month"
+
+  # Images — long cache
+  ExpiresByType image/jpeg                 "access plus 6 months"
+  ExpiresByType image/png                  "access plus 6 months"
+  ExpiresByType image/webp                 "access plus 6 months"
+  ExpiresByType image/avif                 "access plus 6 months"
+  ExpiresByType image/svg+xml              "access plus 6 months"
+  ExpiresByType image/x-icon               "access plus 1 year"
+
+  # Fonts
+  ExpiresByType font/woff2                 "access plus 1 year"
+  ExpiresByType font/woff                  "access plus 1 year"
+  ExpiresByType application/font-woff2     "access plus 1 year"
+
+  # Video
+  ExpiresByType video/mp4                  "access plus 6 months"
+</IfModule>
+
+
+# ── 7. GZIP COMPRESSION ─────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/woff2
+  AddOutputFilterByType DEFLATE font/woff
+</IfModule>
+
+
+# ── 8. CUSTOM ERROR PAGES ───────────────────────────────────────
+# Create these pages when ready
+# ErrorDocument 404 /404.html
+# ErrorDocument 500 /500.html
+
+
+# ── 9. BLOCK SENSITIVE FILES ────────────────────────────────────
+# Prevent direct access to documentation and config files
+<FilesMatch "\.(md|txt|htaccess|htpasswd|env|log)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Allow favicon.ico and robots.txt
+<Files "favicon.ico">
+  Order allow,deny
+  Allow from all
+</Files>
+
+<Files "robots.txt">
+  Order allow,deny
+  Allow from all
+</Files>
