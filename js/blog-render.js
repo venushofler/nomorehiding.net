@@ -1,5 +1,5 @@
 /**
- * blog-render.js — No More Hiding
+ * blog-render.js — no more hiding
  * Builds the blog page hero carousel and post grid from NMH_POSTS (blog-data.js).
  * Must load AFTER blog-data.js.
  *

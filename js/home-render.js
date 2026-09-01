@@ -1,5 +1,5 @@
 /**
- * home-render.js — No More Hiding
+ * home-render.js — no more hiding
  * Dynamically renders the 3 homepage blog cards from NMH_POSTS (blog-data.js).
  * Must load AFTER blog-data.js.
  *

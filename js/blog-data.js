@@ -1,5 +1,5 @@
 /**
- * blog-data.js — No More Hiding
+ * blog-data.js — no more hiding
  * Single source of truth for all blog posts.
  * Used by: index.html (homepage card carousel) and blog/index.html (blog page hero + grid).
  *

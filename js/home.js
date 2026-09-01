@@ -1,5 +1,5 @@
 /* =================================================================
-   home.js — No More Hiding Homepage
+   home.js — no more hiding Homepage
    Handles:
      1. Hero Video Carousel  (5-second auto-advance, video play/pause)
      2. Monthly Calendar     (grid render, month navigation, event list)

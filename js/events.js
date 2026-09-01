@@ -1,5 +1,5 @@
 /* =============================================================
-   events.js — No More Hiding
+   events.js — no more hiding
    Monthly calendar + event list for the Events page.
    ============================================================= */
 

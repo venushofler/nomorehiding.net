@@ -1,5 +1,5 @@
 /**
- * post-render.js — No More Hiding
+ * post-render.js — no more hiding
  * Handles individual blog post page functionality:
  *   1. Hero image injection from blog-data.js (single source of truth)
  *   2. Estimated reading time calculation

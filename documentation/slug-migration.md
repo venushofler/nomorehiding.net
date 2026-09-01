@@ -22,7 +22,7 @@ Best practice: lowercase, hyphens only, 2–3 keywords, no stop words (a / the /
 
 | Page Name | Current Slug | New Slug |
 |---|---|---|
-| No More Hiding — More Than a Mantra, It's a Movement | `/no-more-hiding-more-than-a-mantra-its-a-movement` | `/more-than-mantra` |
+| no more hiding — More Than a Mantra, It's a Movement | `/no-more-hiding-more-than-a-mantra-its-a-movement` | `/more-than-mantra` |
 | Big Sister Talk: How to Get Your Shine Back | `/big-sister-talk-how-to-get-your-shine-back` | `/get-shine-back` |
 | Living Fully, Living Free: Single at Any Age Part 1 | `/living-fully-living-free-single-at-any-age-part-1` | `/living-single-free` |
 | Living Fully Part II: Single Living — The Difference Is a Decision | `/living-fully-part-ii-single-living-living-single-the-difference-is-a-decision` | `/single-living-choice` |
