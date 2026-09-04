@@ -27,30 +27,30 @@
 
       <!-- ── HERO ──────────────────────────────────────────────────────────────── -->
       <section class="post-hero" data-testid="post-hero">
-        <!-- src and alt injected by post-render.js from blog-data.js -->
-        <img src="" alt="" class="post-hero-img" width="1440" height="700" loading="eager" />
-
+        <div class="post-hero-img-wrap" aria-hidden="true">
+          <!-- Hero image src + alt injected by post-render.js from blog-data.js — do not hardcode here -->
+          <img src="" alt="" class="post-hero-img" width="1440" height="700" loading="eager" />
+          <div class="post-hero-overlay"></div>
+        </div>
         <div class="post-hero-content">
-          <nav class="post-breadcrumb" aria-label="Breadcrumb" data-testid="post-breadcrumb">
+          <nav class="post-breadcrumb" aria-label="Breadcrumb">
             <a href="/">Home</a>
-            <span aria-hidden="true">&#8250;</span>
+            <span class="post-breadcrumb-sep" aria-hidden="true">&rsaquo;</span>
             <a href="/blog/">Blog</a>
-            <span aria-hidden="true">&#8250;</span>
-            <span>Motherhood Transformed</span>
+            <span class="post-breadcrumb-sep" aria-hidden="true">&rsaquo;</span>
+            <span aria-current="page">Motherhood Transformed</span>
           </nav>
-
-          <p class="post-category" data-testid="post-category">Personal Growth</p>
-
-          <h1 class="post-title" data-testid="post-title">Motherhood Transformed: The Peace of Shifting Roles in the Parent-Child Relationship</h1>
-
-          <p class="post-deck" data-testid="post-deck">When your child grows up, the relationship doesn&#8217;t end &#8212; it changes. This reflection is for mothers learning to release control, welcome mutual respect, and discover the quiet peace that comes from loving an adult child differently than before.</p>
-
-          <div class="post-meta" data-testid="post-meta">
-            <span class="post-author">Renetta Smith, Founder &amp; CEO</span>
-            <span class="post-meta-sep" aria-hidden="true">&#183;</span>
-            <time class="post-date" datetime="2025-12-25">December 25, 2025</time>
-            <span class="post-meta-sep" aria-hidden="true">&#183;</span>
-            <span class="post-reading-time" data-testid="reading-time">4 min read</span>
+          <div class="post-hero-category" data-testid="post-category">Relationships</div>
+          <h1 class="post-hero-title" data-testid="post-title">Motherhood Transformed: The Peace of Shifting Roles in the Parent-Child Relationship</h1>
+          <p class="post-hero-deck" data-testid="post-deck">
+            When your child grows up, the relationship doesn&#8217;t end &#8212; it changes. This reflection is for mothers learning to release control, welcome mutual respect, and discover the quiet peace that comes from loving an adult child differently than before.
+          </p>
+          <div class="post-hero-meta" data-testid="post-meta">
+            <span class="post-hero-author">Renetta Smith, Founder &amp; CEO, no more hiding&#8482;</span>
+            <span class="post-hero-meta-sep" aria-hidden="true">&middot;</span>
+            <time class="post-hero-date" datetime="2025-12-25">December 25, 2025</time>
+            <span class="post-hero-meta-sep" aria-hidden="true">&middot;</span>
+            <span class="post-reading-time" data-testid="reading-time" aria-label="Estimated reading time"></span>
           </div>
         </div>
       </section>
@@ -182,23 +182,46 @@
         </article>
 
         <!-- ── SIDEBAR ──────────────────────────────────────── -->
-        <aside class="post-sidebar" data-testid="post-sidebar">
+        <aside class="post-sidebar" data-testid="post-sidebar" aria-label="Sidebar">
 
-          <div class="sidebar-author" data-testid="sidebar-author">
-            <img src="/images/renetta-headshot.jpg" alt="Renetta Smith" class="sidebar-author-photo" width="80" height="80" loading="lazy" />
-            <div class="sidebar-author-info">
-              <p class="sidebar-author-name">Renetta Smith</p>
-              <p class="sidebar-author-title">Founder &amp; CEO, no more hiding&#8482;</p>
+          <div class="sidebar-block sidebar-author" data-testid="sidebar-author">
+            <div class="sidebar-block-label">About the Author</div>
+            <div class="sidebar-author-inner">
+              <img
+                src="/images/about/renetta-smith-ceo-founder.png"
+                alt="Renetta Smith, Founder of no more hiding&#8482;"
+                class="sidebar-author-avatar"
+                width="64"
+                height="64"
+                loading="lazy"
+              />
+              <div>
+                <div class="sidebar-author-name">Renetta Smith</div>
+                <div class="sidebar-author-title">Founder &amp; CEO, no more hiding&#8482;</div>
+              </div>
             </div>
+            <p class="sidebar-author-bio">
+              Renetta Smith is a community builder, strategist, and founder of no more hiding&#8482; &mdash; a space
+              for women in midlife ready to live whole, live seen, and live free.
+            </p>
           </div>
 
-          <div class="sidebar-newsletter" data-testid="sidebar-newsletter">
-            <p class="sidebar-newsletter-heading">Stay Connected</p>
-            <p>Get new posts, resources, and community updates delivered to your inbox.</p>
-            <a href="/community/" class="btn btn--primary">Join the Community</a>
+          <div class="sidebar-block sidebar-newsletter" data-testid="sidebar-newsletter">
+            <div class="sidebar-block-label">Stay Connected</div>
+            <p class="sidebar-newsletter-text">
+              Get new stories, community updates, and event announcements delivered to your inbox.
+            </p>
+            <a href="/contact/" class="btn btn--salmon" data-testid="sidebar-newsletter-cta">
+              Join the Community
+            </a>
           </div>
 
-          <div class="sidebar-related" data-testid="sidebar-related" id="related-posts"></div>
+          <div class="sidebar-block sidebar-related" data-testid="sidebar-related">
+            <div class="sidebar-block-label">You Might Also Like</div>
+            <ul id="sidebar-related-list" class="sidebar-related-list" role="list" aria-label="Related posts">
+              <!-- Injected by post-render.js -->
+            </ul>
+          </div>
 
         </aside>
 

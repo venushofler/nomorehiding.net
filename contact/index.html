@@ -1,23 +1,694 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — no more hiding</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lato:wght@300;400;700&display=swap">
-  <link rel="stylesheet" href="/css/global.css">
-  <link rel="stylesheet" href="/css/components.css"></head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &mdash; no more hiding</title>
+  <meta name="description" content="Get in touch with Renetta Smith and the no more hiding community. We&rsquo;d love to hear from you." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lato:wght@300;400;700&display=swap" />
+
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+
+  <style>
+    /* ── Country Picker (cpicker) ─────────────────────────── */
+    .cpicker { position: relative; flex: 0 0 auto; }
+
+    .cpicker-btn {
+      display: flex; align-items: center; gap: 6px;
+      height: 44px; padding: 0 10px;
+      background: #fff; border: 1.5px solid #d0cbc8; border-radius: 6px;
+      cursor: pointer; font-family: inherit; font-size: 0.9375rem;
+      color: var(--color-charcoal, #4A4A4A);
+      white-space: nowrap; transition: border-color 0.2s;
+      min-width: 88px;
+    }
+    .cpicker-btn:hover,
+    .cpicker-btn:focus-visible { border-color: var(--color-salmon, #F8A491); outline: none; }
+    .cpicker-btn[aria-expanded="true"] { border-color: var(--color-salmon, #F8A491); }
+
+    .cpicker-flag { display: block; border-radius: 2px; flex-shrink: 0; }
+    .cpicker-code { font-weight: 600; letter-spacing: 0.02em; }
+    .cpicker-chevron { opacity: 0.5; flex-shrink: 0; transition: transform 0.18s; }
+    .cpicker-btn[aria-expanded="true"] .cpicker-chevron { transform: rotate(180deg); }
+
+    .cpicker-dropdown {
+      position: absolute; top: calc(100% + 5px); left: 0; z-index: 300;
+      width: 290px; background: #fff;
+      border: 1.5px solid #e0dbd8; border-radius: 8px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+      overflow: hidden;
+    }
+    .cpicker-search-wrap { padding: 10px 10px 6px; border-bottom: 1px solid #f0ebe8; }
+    .cpicker-search {
+      width: 100%; padding: 7px 10px; box-sizing: border-box;
+      border: 1.5px solid #d0cbc8; border-radius: 5px;
+      font-family: inherit; font-size: 0.875rem;
+      color: var(--color-charcoal, #4A4A4A);
+      background: var(--color-cream, #fdf8f6); outline: none;
+    }
+    .cpicker-search:focus { border-color: var(--color-salmon, #F8A491); }
+
+    .cpicker-list {
+      list-style: none; margin: 0; padding: 4px 0;
+      max-height: 240px; overflow-y: auto;
+    }
+    .cpicker-group-label {
+      padding: 6px 12px 2px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: #aaa; pointer-events: none;
+    }
+    .cpicker-separator {
+      height: 1px; background: #f0ebe8; margin: 4px 0; pointer-events: none;
+    }
+    .cpicker-list li[role="option"] {
+      display: flex; align-items: center; gap: 9px;
+      padding: 8px 12px; cursor: pointer;
+      font-size: 0.875rem; color: var(--color-charcoal, #4A4A4A);
+      transition: background 0.12s;
+    }
+    .cpicker-list li[role="option"]:hover { background: #fdf4f1; }
+    .cpicker-list li[aria-selected="true"] { background: #fdf4f1; font-weight: 600; }
+    .cpicker-item-name { flex: 1; }
+    .cpicker-item-code { color: #999; font-size: 0.8125rem; white-space: nowrap; }
+    .cpicker-checkmark { margin-left: 2px; color: var(--color-salmon, #F8A491); flex-shrink: 0; }
+
+    .cpicker-empty {
+      padding: 14px 12px; text-align: center;
+      font-size: 0.875rem; color: #aaa;
+    }
+  </style>
+</head>
 <body data-page="contact">
 
-  <div id="site-nav"></div>
+  <div id="site-nav" data-testid="site-nav" role="banner"></div>
 
-  <main>
-    <!-- Contact form goes here -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <main id="main-content" data-testid="main-content">
+
+    <!-- ════════════════════════════════════════════════════════════
+         CONTACT HERO
+    ════════════════════════════════════════════════════════════ -->
+    <section class="contact-hero" aria-label="Contact page hero" data-testid="contact-hero">
+      <div class="contact-hero-img-wrap" aria-hidden="true">
+        <img
+          src="/images/contact/contact-hero-1.png"
+          alt="A diverse group of women in midlife smiling together — the no more hiding community"
+          class="contact-hero-img"
+          width="1440" height="600"
+          loading="eager"
+        />
+        <div class="contact-hero-overlay"></div>
+      </div>
+      <div class="contact-hero-content">
+        <div class="contact-hero-eyebrow eyebrow">We&rsquo;d Love to Hear from You</div>
+        <h1 class="contact-hero-title">Get in Touch</h1>
+        <p class="contact-hero-subtitle">
+          Questions, ideas, or just want to connect &mdash; reach out and we&rsquo;ll get back to you.
+        </p>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════
+         CONTACT BODY
+    ════════════════════════════════════════════════════════════ -->
+    <section class="contact-section" data-testid="contact-section" aria-label="Contact">
+      <div class="contact-grid">
+
+        <!-- ── Form column ─────────────────────────────────────── -->
+        <div class="contact-form-col" data-testid="contact-form-col">
+
+          <form
+            id="contact-form"
+            class="contact-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            novalidate
+            data-testid="contact-form"
+            aria-label="Contact form"
+          >
+            <!-- Web3Forms config — replace YOUR_WEB3FORMS_KEY -->
+            <input type="hidden" name="access_key"  value="YOUR_WEB3FORMS_KEY" />
+            <input type="hidden" name="subject"     value="New message from nomorehiding.net" />
+            <input type="hidden" name="from_name"   value="no more hiding Website" />
+            <!-- Honeypot -->
+            <input type="checkbox" name="botcheck" class="contact-honeypot" tabindex="-1" aria-hidden="true" />
+
+            <!-- Name -->
+            <div class="contact-row contact-row--two">
+              <div class="contact-field">
+                <label class="contact-label" for="contact-first">
+                  First Name <span class="contact-req" aria-hidden="true">*</span>
+                </label>
+                <input class="contact-input" type="text" id="contact-first" name="first_name"
+                       autocomplete="given-name" required aria-required="true" />
+              </div>
+              <div class="contact-field">
+                <label class="contact-label" for="contact-last">
+                  Last Name <span class="contact-req" aria-hidden="true">*</span>
+                </label>
+                <input class="contact-input" type="text" id="contact-last" name="last_name"
+                       autocomplete="family-name" required aria-required="true" />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-row">
+              <div class="contact-field">
+                <label class="contact-label" for="contact-email">
+                  Email Address <span class="contact-req" aria-hidden="true">*</span>
+                </label>
+                <input class="contact-input" type="email" id="contact-email" name="email"
+                       autocomplete="email" required aria-required="true" />
+              </div>
+            </div>
+
+            <!-- Phone with custom country-code flag picker -->
+            <div class="contact-row">
+              <div class="contact-field">
+                <label class="contact-label" for="contact-phone">
+                  Phone Number <span class="contact-opt">(optional)</span>
+                </label>
+                <div class="contact-phone-row">
+
+                  <!-- ── Custom flag picker ── -->
+                  <div class="cpicker" id="cpicker">
+                    <button type="button" class="cpicker-btn" id="cpicker-btn"
+                            aria-haspopup="listbox" aria-expanded="false"
+                            aria-label="Select country code">
+                      <img class="cpicker-flag" id="cpicker-flag"
+                           src="https://flagcdn.com/w20/us.png"
+                           alt="United States" width="20" height="15" />
+                      <span class="cpicker-code" id="cpicker-code">+1</span>
+                      <svg class="cpicker-chevron" viewBox="0 0 16 16" fill="none"
+                           aria-hidden="true" width="12" height="12">
+                        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.75"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+
+                    <div class="cpicker-dropdown" id="cpicker-dropdown"
+                         role="listbox" aria-label="Country codes" hidden>
+                      <div class="cpicker-search-wrap">
+                        <input type="text" class="cpicker-search" id="cpicker-search"
+                               placeholder="Search countries…" autocomplete="off"
+                               aria-label="Search countries" />
+                      </div>
+                      <ul class="cpicker-list" id="cpicker-list"></ul>
+                      <p class="cpicker-empty" id="cpicker-empty" hidden>No country found</p>
+                    </div>
+
+                    <input type="hidden" name="country_code" id="cpicker-value" value="+1" />
+                  </div>
+                  <!-- ── /Custom flag picker ── -->
+
+                  <input class="contact-input contact-phone-input" type="tel" id="contact-phone"
+                         name="phone" autocomplete="tel" placeholder="Phone number" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact preference -->
+            <div class="contact-row">
+              <div class="contact-field">
+                <label class="contact-label" for="contact-preference">
+                  Preferred Way to Reach You <span class="contact-opt">(optional)</span>
+                </label>
+                <select class="contact-input contact-select" id="contact-preference"
+                        name="contact_preference">
+                  <option value="" disabled selected>Select a preference&hellip;</option>
+                  <option value="Email">Email</option>
+                  <option value="Phone call">Phone call</option>
+                  <option value="SMS / Text">SMS / Text</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="No preference">No preference</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Subject -->
+            <div class="contact-row">
+              <div class="contact-field">
+                <label class="contact-label" for="contact-subject">Subject</label>
+                <select class="contact-input contact-select" id="contact-subject"
+                        name="subject_topic">
+                  <option value="" disabled selected>Select a topic&hellip;</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="Community">Community</option>
+                  <option value="Speaking / Media">Speaking / Media</option>
+                  <option value="Partnership">Partnership</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="contact-row">
+              <div class="contact-field">
+                <label class="contact-label" for="contact-message">
+                  Message <span class="contact-req" aria-hidden="true">*</span>
+                </label>
+                <textarea class="contact-input contact-textarea" id="contact-message"
+                          name="message" rows="6"
+                          required aria-required="true"></textarea>
+              </div>
+            </div>
+
+            <!-- Opt-ins -->
+            <div class="contact-row contact-row--checks">
+              <label class="contact-check-label">
+                <input class="contact-check" type="checkbox" id="contact-newsletter"
+                       name="newsletter_opt_in" value="yes" />
+                <span class="contact-check-box" aria-hidden="true"></span>
+                Sign me up for the no more hiding&#8482; newsletter
+              </label>
+              <label class="contact-check-label">
+                <input class="contact-check" type="checkbox" id="contact-wa-group"
+                       name="whatsapp_group_opt_in" value="yes" />
+                <span class="contact-check-box" aria-hidden="true"></span>
+                Add me to the no more hiding&#8482; WhatsApp community for upcoming events
+              </label>
+            </div>
+
+            <!-- Required note -->
+            <p class="contact-req-note">
+              <span class="contact-req" aria-hidden="true">*</span> Required fields
+            </p>
+
+            <!-- Submit -->
+            <div class="contact-submit-row">
+              <button type="submit" class="btn btn--salmon contact-submit"
+                      data-testid="contact-submit">
+                Send Message
+              </button>
+            </div>
+
+            <!-- Result banner -->
+            <div id="contact-result" class="contact-result" role="alert" aria-live="polite"
+                 hidden></div>
+
+          </form>
+        </div>
+
+        <!-- ── Image + info column ─────────────────────────────── -->
+        <aside class="contact-aside" data-testid="contact-aside" aria-label="Contact information">
+
+          <figure class="contact-img-figure" data-testid="contact-img-figure">
+            <img
+          src="/images/contact/1080x1350-contact-methods.png"
+          alt="A diverse group of women in midlife smiling together — the no more hiding community"
+          class="contact-hero-img"
+          width="1440" height="600"
+          loading="eager"
+        />
+          </figure>
+
+          <div class="contact-info" data-testid="contact-info">
+            <h2 class="contact-info-heading">Let&rsquo;s Connect</h2>
+            <p class="contact-info-text">
+              Whether you have a question, want to share your story, or are interested in
+              partnering with <em>no more hiding&#8482;</em>, we&rsquo;d love to hear from you.
+            </p>
+            <p class="contact-info-text">
+              We read every message and aim to respond within 2&ndash;3 business days.
+            </p>
+            <a href="mailto:hello@nomorehiding.net" class="contact-email-link no-ext-icon">
+              hello@nomorehiding.net
+            </a>
+          </div>
+
+        </aside>
+
+      </div>
+    </section>
+
   </main>
 
-  <div id="site-footer"></div>
-  <script src="/js/includes.js"></script>
+  <div id="site-footer" data-testid="site-footer"></div>
 
-<script src="/js/global.js"></script>
+  <script src="/js/includes.js"></script>
+  <script src="/js/global.js"></script>
+
+  <!-- ── Country Picker ─────────────────────────────────────────── -->
+  <script>
+  (function () {
+    'use strict';
+
+    /* ── Country data: [iso2, dialCode, name] ── */
+    var COUNTRIES = [
+      ['af','93','Afghanistan'],
+      ['al','355','Albania'],
+      ['dz','213','Algeria'],
+      ['ad','376','Andorra'],
+      ['ao','244','Angola'],
+      ['ag','1','Antigua & Barbuda'],
+      ['ar','54','Argentina'],
+      ['am','374','Armenia'],
+      ['au','61','Australia'],
+      ['at','43','Austria'],
+      ['az','994','Azerbaijan'],
+      ['bs','1','Bahamas'],
+      ['bh','973','Bahrain'],
+      ['bd','880','Bangladesh'],
+      ['bb','1','Barbados'],
+      ['by','375','Belarus'],
+      ['be','32','Belgium'],
+      ['bz','501','Belize'],
+      ['bj','229','Benin'],
+      ['bt','975','Bhutan'],
+      ['bo','591','Bolivia'],
+      ['ba','387','Bosnia & Herzegovina'],
+      ['bw','267','Botswana'],
+      ['br','55','Brazil'],
+      ['bn','673','Brunei'],
+      ['bg','359','Bulgaria'],
+      ['bf','226','Burkina Faso'],
+      ['bi','257','Burundi'],
+      ['cv','238','Cape Verde'],
+      ['kh','855','Cambodia'],
+      ['cm','237','Cameroon'],
+      ['ca','1','Canada'],
+      ['cf','236','Central African Republic'],
+      ['td','235','Chad'],
+      ['cl','56','Chile'],
+      ['cn','86','China'],
+      ['co','57','Colombia'],
+      ['km','269','Comoros'],
+      ['cg','242','Congo'],
+      ['cr','506','Costa Rica'],
+      ['hr','385','Croatia'],
+      ['cu','53','Cuba'],
+      ['cy','357','Cyprus'],
+      ['cz','420','Czech Republic'],
+      ['dk','45','Denmark'],
+      ['dj','253','Djibouti'],
+      ['do','1','Dominican Republic'],
+      ['ec','593','Ecuador'],
+      ['eg','20','Egypt'],
+      ['sv','503','El Salvador'],
+      ['gq','240','Equatorial Guinea'],
+      ['er','291','Eritrea'],
+      ['ee','372','Estonia'],
+      ['sz','268','Eswatini'],
+      ['et','251','Ethiopia'],
+      ['fj','679','Fiji'],
+      ['fi','358','Finland'],
+      ['fr','33','France'],
+      ['ga','241','Gabon'],
+      ['gm','220','Gambia'],
+      ['ge','995','Georgia'],
+      ['de','49','Germany'],
+      ['gh','233','Ghana'],
+      ['gr','30','Greece'],
+      ['gt','502','Guatemala'],
+      ['gn','224','Guinea'],
+      ['gy','592','Guyana'],
+      ['ht','509','Haiti'],
+      ['hn','504','Honduras'],
+      ['hu','36','Hungary'],
+      ['is','354','Iceland'],
+      ['in','91','India'],
+      ['id','62','Indonesia'],
+      ['ir','98','Iran'],
+      ['iq','964','Iraq'],
+      ['ie','353','Ireland'],
+      ['il','972','Israel'],
+      ['it','39','Italy'],
+      ['ci','225','Ivory Coast'],
+      ['jm','1','Jamaica'],
+      ['jp','81','Japan'],
+      ['jo','962','Jordan'],
+      ['kz','7','Kazakhstan'],
+      ['ke','254','Kenya'],
+      ['kw','965','Kuwait'],
+      ['kg','996','Kyrgyzstan'],
+      ['la','856','Laos'],
+      ['lv','371','Latvia'],
+      ['lb','961','Lebanon'],
+      ['ls','266','Lesotho'],
+      ['lr','231','Liberia'],
+      ['ly','218','Libya'],
+      ['li','423','Liechtenstein'],
+      ['lt','370','Lithuania'],
+      ['lu','352','Luxembourg'],
+      ['mg','261','Madagascar'],
+      ['mw','265','Malawi'],
+      ['my','60','Malaysia'],
+      ['mv','960','Maldives'],
+      ['ml','223','Mali'],
+      ['mt','356','Malta'],
+      ['mr','222','Mauritania'],
+      ['mu','230','Mauritius'],
+      ['mx','52','Mexico'],
+      ['md','373','Moldova'],
+      ['mc','377','Monaco'],
+      ['mn','976','Mongolia'],
+      ['me','382','Montenegro'],
+      ['ma','212','Morocco'],
+      ['mz','258','Mozambique'],
+      ['mm','95','Myanmar'],
+      ['na','264','Namibia'],
+      ['np','977','Nepal'],
+      ['nl','31','Netherlands'],
+      ['nz','64','New Zealand'],
+      ['ni','505','Nicaragua'],
+      ['ne','227','Niger'],
+      ['ng','234','Nigeria'],
+      ['mk','389','North Macedonia'],
+      ['no','47','Norway'],
+      ['om','968','Oman'],
+      ['pk','92','Pakistan'],
+      ['pa','507','Panama'],
+      ['pg','675','Papua New Guinea'],
+      ['py','595','Paraguay'],
+      ['pe','51','Peru'],
+      ['ph','63','Philippines'],
+      ['pl','48','Poland'],
+      ['pt','351','Portugal'],
+      ['qa','974','Qatar'],
+      ['ro','40','Romania'],
+      ['ru','7','Russia'],
+      ['rw','250','Rwanda'],
+      ['sa','966','Saudi Arabia'],
+      ['sn','221','Senegal'],
+      ['rs','381','Serbia'],
+      ['sl','232','Sierra Leone'],
+      ['sg','65','Singapore'],
+      ['sk','421','Slovakia'],
+      ['si','386','Slovenia'],
+      ['so','252','Somalia'],
+      ['za','27','South Africa'],
+      ['kr','82','South Korea'],
+      ['ss','211','South Sudan'],
+      ['es','34','Spain'],
+      ['lk','94','Sri Lanka'],
+      ['sd','249','Sudan'],
+      ['sr','597','Suriname'],
+      ['se','46','Sweden'],
+      ['ch','41','Switzerland'],
+      ['sy','963','Syria'],
+      ['tw','886','Taiwan'],
+      ['tj','992','Tajikistan'],
+      ['tz','255','Tanzania'],
+      ['th','66','Thailand'],
+      ['tg','228','Togo'],
+      ['tt','1','Trinidad & Tobago'],
+      ['tn','216','Tunisia'],
+      ['tr','90','Turkey'],
+      ['tm','993','Turkmenistan'],
+      ['ug','256','Uganda'],
+      ['ua','380','Ukraine'],
+      ['ae','971','United Arab Emirates'],
+      ['gb','44','United Kingdom'],
+      ['us','1','United States'],
+      ['uy','598','Uruguay'],
+      ['uz','998','Uzbekistan'],
+      ['ve','58','Venezuela'],
+      ['vn','84','Vietnam'],
+      ['ye','967','Yemen'],
+      ['zm','260','Zambia'],
+      ['zw','263','Zimbabwe']
+    ];
+
+    var POPULAR = ['us','gb','ca','jm','tt','bb','bs','ng','gh','za'];
+
+    var selected = COUNTRIES.filter(function(c){ return c[0]==='us'; })[0];
+
+    var wrap       = document.getElementById('cpicker');
+    var btn        = document.getElementById('cpicker-btn');
+    var dropdown   = document.getElementById('cpicker-dropdown');
+    var flagImg    = document.getElementById('cpicker-flag');
+    var codeSpan   = document.getElementById('cpicker-code');
+    var valueInput = document.getElementById('cpicker-value');
+    var searchEl   = document.getElementById('cpicker-search');
+    var listEl     = document.getElementById('cpicker-list');
+    var emptyEl    = document.getElementById('cpicker-empty');
+
+    if (!btn) return; // guard
+
+    function flagUrl(iso) {
+      return 'https://flagcdn.com/w20/' + iso.toLowerCase() + '.png';
+    }
+
+    function esc(s) {
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function checkSvg() {
+      return '<svg class="cpicker-checkmark" viewBox="0 0 16 16" fill="none" width="14" height="14" aria-hidden="true"><path d="M3 8.5l3 3L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    }
+
+    function addItem(c) {
+      var li = document.createElement('li');
+      li.setAttribute('role','option');
+      li.setAttribute('tabindex','0');
+      var isSel = (c[0] === selected[0]);
+      li.setAttribute('aria-selected', isSel ? 'true' : 'false');
+      li.dataset.iso = c[0];
+      li.innerHTML =
+        '<img src="' + flagUrl(c[0]) + '" width="20" height="15" alt="" aria-hidden="true" style="border-radius:2px;flex-shrink:0;">' +
+        '<span class="cpicker-item-name">' + esc(c[2]) + '</span>' +
+        '<span class="cpicker-item-code">+' + esc(c[1]) + '</span>' +
+        (isSel ? checkSvg() : '');
+      li.addEventListener('click', function(){ pick(c); });
+      li.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(c); }
+      });
+      listEl.appendChild(li);
+    }
+
+    function buildList(q) {
+      q = (q || '').toLowerCase().trim();
+      listEl.innerHTML = '';
+
+      if (!q) {
+        /* Popular group */
+        var grp = document.createElement('li');
+        grp.className = 'cpicker-group-label';
+        grp.setAttribute('role','presentation');
+        grp.textContent = 'Popular';
+        listEl.appendChild(grp);
+
+        POPULAR.forEach(function(iso) {
+          var c = COUNTRIES.filter(function(x){ return x[0]===iso; })[0];
+          if (c) addItem(c);
+        });
+
+        var sep = document.createElement('li');
+        sep.className = 'cpicker-separator';
+        sep.setAttribute('role','separator');
+        listEl.appendChild(sep);
+
+        COUNTRIES.forEach(function(c) {
+          if (POPULAR.indexOf(c[0]) === -1) addItem(c);
+        });
+      } else {
+        var hits = COUNTRIES.filter(function(c) {
+          return c[2].toLowerCase().indexOf(q) !== -1 ||
+                 c[1].indexOf(q.replace('+','')) !== -1;
+        });
+        hits.forEach(addItem);
+        emptyEl.hidden = hits.length > 0;
+        listEl.scrollTop = 0;
+        return;
+      }
+
+      emptyEl.hidden = true;
+      listEl.scrollTop = 0;
+    }
+
+    function pick(c) {
+      selected = c;
+      flagImg.src = flagUrl(c[0]);
+      flagImg.alt = c[2];
+      codeSpan.textContent = '+' + c[1];
+      valueInput.value = '+' + c[1];
+      close();
+    }
+
+    function open() {
+      dropdown.hidden = false;
+      btn.setAttribute('aria-expanded','true');
+      searchEl.value = '';
+      buildList('');
+      setTimeout(function(){ searchEl.focus(); }, 30);
+    }
+
+    function close() {
+      dropdown.hidden = true;
+      btn.setAttribute('aria-expanded','false');
+    }
+
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      dropdown.hidden ? open() : close();
+    });
+
+    searchEl.addEventListener('input', function() {
+      buildList(searchEl.value);
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!wrap.contains(e.target)) close();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !dropdown.hidden) {
+        close();
+        btn.focus();
+      }
+    });
+
+  }());
+  </script>
+
+  <!-- ── Contact form submit ────────────────────────────────────── -->
+  <script>
+    (function () {
+      'use strict';
+
+      var form   = document.getElementById('contact-form');
+      var result = document.getElementById('contact-result');
+      var btn    = form.querySelector('.contact-submit');
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        btn.disabled    = true;
+        btn.textContent = 'Sending…';
+        result.hidden   = true;
+
+        try {
+          var res  = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body:   new FormData(form),
+          });
+          var json = await res.json();
+
+          if (json.success) {
+            result.className   = 'contact-result contact-result--success';
+            result.textContent = 'Thank you! Your message has been sent. We’ll be in touch within 2–3 business days.';
+            form.reset();
+          } else {
+            throw new Error(json.message || 'Submission failed');
+          }
+        } catch (_err) {
+          result.className   = 'contact-result contact-result--error';
+          result.textContent = 'Something went wrong. Please try again or email us directly at hello@nomorehiding.net.';
+        }
+
+        result.hidden   = false;
+        btn.disabled    = false;
+        btn.textContent = 'Send Message';
+        result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+
+    }());
+  </script>
+
 </body>
 </html>
