@@ -4343,6 +4343,13 @@
   align-items: start;
 }
 
+/* ── Two-column grid image ─────────────────────────────────────────────── */
+.contact-aside-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ── Form layout ─────────────────────────────────────────────────── */
 .contact-form {
   display: flex;
