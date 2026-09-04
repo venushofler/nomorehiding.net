@@ -101,7 +101,7 @@ const NMH_POSTS = [
     title: "The Love Language of Elder Caregiving",
     category: "Elder Care",
     excerpt: "Caregiving is an act of love — but it doesn't always feel that way in the middle of it. Here's what it really takes.",
-    image: "/images/blog/elder-love-language/elder-love-language-hero.png",
+    image: "/images/blog/elder-love-language/elder-love-language-hero.jpg",
     imageAlt: "A close-up of a caregiver's hand gently holding an elderly person's hand, symbolizing the love and care involved in elder caregiving",
     url: "/blog/elder-love-language/",
     published: "May 23, 2026"
