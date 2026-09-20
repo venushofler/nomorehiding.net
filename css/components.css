@@ -5195,3 +5195,37 @@ color: #6b8c5f;
   line-height: 1.6;
   color: var(--color-charcoal);
 }
+
+/* ══════════════════════════════════════════════════════════════
+   POST DIVIDER — brand separator image (blog posts)
+   Usage: <figure class="post-divider" aria-hidden="true">
+          with <picture> + responsive <source> inside.
+   ══════════════════════════════════════════════════════════════ */
+
+.post-divider {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.post-divider img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ── Caption quote — appears between the two dividers ─────────── */
+.post-caption-quote {
+  text-align: center;
+  margin: 0;
+}
+
+.post-caption-quote strong {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 600;
+  color: var(--color-sage);
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
