@@ -2684,6 +2684,15 @@
   margin: 40px 0;
 }
 
+/* Create a highligher effect for inline text */
+
+.post-highlight {
+  background-color: #FFFF00;
+  padding: 0.6rem 0.8rem;
+  display: block;
+  border-radius: 2px;
+}
+
 .post-inline-img {
   width: 100%;
   height: auto;
@@ -5230,4 +5239,9 @@
   font-style: italic;
   line-height: 1.5;
   letter-spacing: 0.02em;
+}
+
+/* Bold and underlined text */
+.post-caption-underline strong u {
+  font-weight: 800;
 }
