@@ -2103,13 +2103,11 @@
   }
 }
 
-
 .carousel-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.38);
 }
-
 
 /* Slide content */
 .carousel-content {
@@ -2668,7 +2666,7 @@
   font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-color: #6b8c5f;
+  color: #6b8c5f;
 
   margin-bottom: 10px;
 }
@@ -2706,6 +2704,7 @@ color: #6b8c5f;
 .post-list li {
   font-size: 16px;
   font-weight: 300;
+  font-style: italic;
   color: var(--color-sage);
   line-height: 1.8;
   padding-left: 8px;
@@ -4324,7 +4323,6 @@ color: #6b8c5f;
   }
 }
 
-
 /* ═══════════════════════════════════════════════════════════════════
    CONTACT PAGE
    ════════════════════════════════════════════════════════════════ */
@@ -4378,7 +4376,7 @@ color: #6b8c5f;
 /* ── Labels ──────────────────────────────────────────────────────── */
 .contact-label {
   display: block;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -4403,7 +4401,7 @@ color: #6b8c5f;
   display: block;
   width: 100%;
   padding: 0.75rem 1rem;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 1rem;
   color: var(--color-sage);
   background: #fff;
@@ -4411,7 +4409,9 @@ color: #6b8c5f;
   border-radius: 6px;
   box-sizing: border-box;
   appearance: none;
-  transition: border-color 0.18s, box-shadow 0.18s;
+  transition:
+    border-color 0.18s,
+    box-shadow 0.18s;
 }
 
 .contact-input:focus {
@@ -4476,7 +4476,7 @@ color: #6b8c5f;
   display: flex;
   align-items: center;
   gap: 0.625rem;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 0.9375rem;
   color: var(--color-sage);
   cursor: pointer;
@@ -4500,7 +4500,9 @@ color: #6b8c5f;
   border: 1.5px solid #ccc;
   border-radius: 4px;
   background: #fff;
-  transition: background 0.15s, border-color 0.15s;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4512,7 +4514,7 @@ color: #6b8c5f;
 }
 
 .contact-check:checked + .contact-check-box::after {
-  content: '';
+  content: "";
   display: block;
   width: 5px;
   height: 9px;
@@ -4540,7 +4542,7 @@ color: #6b8c5f;
 
 /* ── Required note ───────────────────────────────────────────────── */
 .contact-req-note {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 0.8rem;
   color: #999;
   margin: 0;
@@ -4565,7 +4567,7 @@ color: #6b8c5f;
 .contact-result {
   padding: 1rem 1.25rem;
   border-radius: 6px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 0.9375rem;
   line-height: 1.6;
 }
@@ -4613,7 +4615,7 @@ color: #6b8c5f;
 }
 
 .contact-img-placeholder-label {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -4628,7 +4630,7 @@ color: #6b8c5f;
 }
 
 .contact-info-heading {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.75rem;
   font-weight: 600;
   color: var(--color-sage);
@@ -4636,7 +4638,7 @@ color: #6b8c5f;
 }
 
 .contact-info-text {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 0.9375rem;
   line-height: 1.75;
   color: var(--color-sage);
@@ -4645,7 +4647,7 @@ color: #6b8c5f;
 
 .contact-email-link {
   display: inline-block;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 0.9375rem;
   font-weight: 700;
   color: var(--color-salmon-dark);
@@ -4707,7 +4709,6 @@ color: #6b8c5f;
   }
 }
 
-
 /* ── Contact hero — full-width image with overlay ────────────────── */
 .contact-hero {
   position: relative;
@@ -4752,7 +4753,7 @@ color: #6b8c5f;
 }
 
 .contact-hero-eyebrow {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -4762,7 +4763,7 @@ color: #6b8c5f;
 }
 
 .contact-hero-title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 600;
   color: #fff;
@@ -4772,7 +4773,7 @@ color: #6b8c5f;
 }
 
 .contact-hero-subtitle {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: clamp(1rem, 2vw, 1.125rem);
   font-weight: 300;
   color: rgba(255, 255, 255, 0.92);
@@ -4801,7 +4802,6 @@ color: #6b8c5f;
     padding: 0 1rem 2rem;
   }
 }
-
 
 /* ════════════════════════════════════════════════════════════════
    COUNTRY PICKER (cpicker)
@@ -5041,7 +5041,9 @@ color: #6b8c5f;
   object-fit: cover;
   display: block;
   border-radius: var(--radius-md);
-  transition: transform 0.25s ease, filter 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
 }
 
 @media (max-width: 600px) {
@@ -5194,4 +5196,38 @@ color: #6b8c5f;
   font-size: 15px;
   line-height: 1.6;
   color: var(--color-charcoal);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   POST DIVIDER — brand separator image (blog posts)
+   Usage: <figure class="post-divider" aria-hidden="true">
+          with <picture> + responsive <source> inside.
+   ══════════════════════════════════════════════════════════════ */
+
+.post-divider {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.post-divider img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ── Caption quote — appears between the two dividers ─────────── */
+.post-caption-quote {
+  text-align: center;
+  margin: 0;
+}
+
+.post-caption-quote strong {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 600;
+  color: var(--color-sage);
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
