@@ -27,6 +27,19 @@ const NMH_POSTS = [
      Update images once blog post images are migrated.
   ──────────────────────────────────────────────────────────── */
 
+  // Beyond the Tee Box: My Experience as a Woman of Color Golfing in Scotland
+  {
+    id: "black-woman-golfer-scotland",
+    title: "Beyond the Tee Box: My Experience as a Woman of Color Golfing in Scotland",
+    category: "Golf & Community",
+    excerpt: "It wasn't the sport itself. It was what happened when I showed up on the course and decided I belonged there.",
+    image: "/images/blog/scotland-golf-trip/blog-birdies-bogies-hero.png",
+    imagePosition: "center 20%",
+    imageAlt: "A Black woman golfing from an earlier century, standing on a scenic golf course with rolling hills and a cloudy sky in the background",
+    url: "/blog/get-shine-back/",
+    published: "October 1, 2025"
+  },
+
   // Am I My Sister's Keeper?
   {
     id: "sisters-keeper",
@@ -40,17 +53,7 @@ const NMH_POSTS = [
     published: "August 26, 2026"
   },
 
-  // Big Sister Talk: How to Get Your Shine Back
-  {
-    id: "get-shine-back",
-    title: "Big Sister Talk: How to Get Your Shine Back",
-    category: "Self-Discovery",
-    excerpt: "You didn't lose your spark. Life just piled a lot of stuff on top of it. Here's how to start uncovering it.",
-    image: "/images/blog/get-shine-back/get-shine-back-hero.png",
-    imageAlt: "A woman with arms outstretched standing outdoors, face turned upward with a joyful expression",
-    url: "/blog/get-shine-back/",
-    published: "October 1, 2025"
-  },
+
 
   // Birdies, Bogeys, and Rolling Hills: Scotland Golf Trip
   {
@@ -205,6 +208,18 @@ const NMH_POSTS = [
     imageAlt: "A split image of a woman in a dimly lit room on the left, looking sad and isolated, and the same woman on the right, standing outdoors in bright sunlight, looking confident and free, symbolizing the contrast between being single and choosing to live fully as a single person",
     url: "/blog/single-living-choice/",
     published: "October 30, 2025"
+  },
+
+    // Big Sister Talk: How to Get Your Shine Back
+  {
+    id: "get-shine-back",
+    title: "Big Sister Talk: How to Get Your Shine Back",
+    category: "Self-Discovery",
+    excerpt: "You didn't lose your spark. Life just piled a lot of stuff on top of it. Here's how to start uncovering it.",
+    image: "/images/blog/get-shine-back/get-shine-back-hero.png",
+    imageAlt: "A woman with arms outstretched standing outdoors, face turned upward with a joyful expression",
+    url: "/blog/get-shine-back/",
+    published: "October 1, 2025"
   },
 
   // no more hiding: More Than a Mantra, It's a Movement
