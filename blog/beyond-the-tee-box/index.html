@@ -12,7 +12,7 @@
     <meta property="og:title" content="Beyond the Tee Box: My Experience as a Woman of Color Golfing in Scotland" />
     <meta property="og:description" content="What began as uncertainty about golfing in Scotland became an unexpected journey of welcome, connection, and confidence. Renetta shares her experience as a Black American woman navigating Scottish golf spaces." />
     <meta property="og:url" content="https://nomorehiding.net/blog/beyond-the-tee-box/" />
-    <meta property="og:image" content="/images/blog/beyond-the-tee-box/beyond-the-tee-box-hero.jpg" />
+    <meta property="og:image" content="/images/blog/beyond-the-tee-box/beyond-the-tee-box-hero.png" />
     <meta property="article:published_time" content="2026-09-09" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,6 +21,20 @@
     <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/components.css" />
     <link rel="stylesheet" href="/css/post-lightbox.css" />
+
+    <!-- Photo gallery styles -->
+    <style>
+      .post-gallery { margin: 3.5rem 0 2rem; clear: both; }
+      .post-gallery-heading { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; margin-bottom: 1.25rem; color: #222; border-bottom: 1px solid #e5e5e5; padding-bottom: 0.5rem; }
+      .post-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .post-gallery-item { display: flex; flex-direction: column; cursor: zoom-in; }
+      .post-gallery-img-wrap { overflow: hidden; border-radius: 4px; aspect-ratio: 4 / 3; background: #f2f2f2; }
+      .post-gallery-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+      .post-gallery-item:hover .post-gallery-img-wrap img { transform: scale(1.04); }
+      .post-gallery-caption { font-family: 'Lato', sans-serif; font-size: 0.78rem; color: #777; margin-top: 0.4rem; line-height: 1.45; }
+      @media (max-width: 680px) { .post-gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 400px) { .post-gallery-grid { grid-template-columns: 1fr; } }
+    </style>
   </head>
 
   <body data-page="blog">
@@ -81,8 +95,8 @@
           <!-- IMAGE 1 — float right -->
           <figure class="post-figure post-figure--float-right post-figure--lightbox" data-testid="post-figure-1">
             <img
-              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-1.jpg"
-              alt=""
+              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-lpgaa.png"
+              alt="The LPGA Amateur Golf Association logo, one of the organizations introducing more women to the sport of golf"
               class="post-inline-img"
               width="800"
               height="500"
@@ -114,8 +128,8 @@
           <!-- IMAGE 2 — float left -->
           <figure class="post-figure post-figure--float-left post-figure--lightbox" data-testid="post-figure-2">
             <img
-              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-2.jpg"
-              alt=""
+              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-edinburgh-search.png"
+              alt="A Google search results page showing golf courses in Edinburgh, Scotland"
               class="post-inline-img"
               width="800"
               height="500"
@@ -143,8 +157,8 @@
           <!-- IMAGE 3 — float right -->
           <figure class="post-figure post-figure--float-right post-figure--lightbox" data-testid="post-figure-3">
             <img
-              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-3.jpg"
-              alt=""
+              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-edinburgh-street.png"
+              alt="A narrow Scottish residential street with cars parked along both sides, typical of the streets leading to Prestonfield Golf Club in Edinburgh"
               class="post-inline-img"
               width="800"
               height="500"
@@ -191,8 +205,8 @@
           <!-- IMAGE 4 — float left -->
           <figure class="post-figure post-figure--float-left post-figure--lightbox" data-testid="post-figure-4">
             <img
-              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-4.jpg"
-              alt=""
+              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-prestonfield-clubhouse.jpg"
+              alt="The exterior of Prestonfield Golf Club clubhouse in Edinburgh, Scotland, with the balcony where lady golfers were standing"
               class="post-inline-img"
               width="800"
               height="500"
@@ -219,8 +233,8 @@
           <!-- IMAGE 5 — float right -->
           <figure class="post-figure post-figure--float-right post-figure--lightbox" data-testid="post-figure-5">
             <img
-              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-5.jpg"
-              alt=""
+              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-prestonfield-british-golfers.jpg"
+              alt="Two young British golfers visiting Edinburgh on holiday, who helped Renetta navigate the Prestonfield Golf Club course"
               class="post-inline-img"
               width="800"
               height="500"
@@ -241,8 +255,8 @@
           <!-- IMAGE 6 — float left -->
           <figure class="post-figure post-figure--float-left post-figure--lightbox" data-testid="post-figure-6">
             <img
-              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-6.jpg"
-              alt=""
+              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-prestonfield-renetta.jpg"
+              alt="Renetta Smith at Prestonfield Golf Club in Edinburgh, Scotland, after her first round of golf in Scotland"
               class="post-inline-img"
               width="800"
               height="500"
@@ -268,8 +282,8 @@
           <!-- IMAGE 7 — float right -->
           <figure class="post-figure post-figure--float-right post-figure--lightbox" data-testid="post-figure-7">
             <img
-              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-7.jpg"
-              alt=""
+              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-duddingston-course.png"
+              alt="A view of Duddingston Golf Club course in Edinburgh, Scotland, with lush green fairways and the surrounding landscape"
               class="post-inline-img"
               width="800"
               height="500"
@@ -299,8 +313,8 @@
           <!-- IMAGE 8 — float left -->
           <figure class="post-figure post-figure--float-left post-figure--lightbox" data-testid="post-figure-8">
             <img
-              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-8.jpg"
-              alt=""
+              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-duddingston-clubhouse.jpg"
+              alt="Another view of Duddingston Golf Club in Edinburgh, Scotland, showing the course grounds and clubhouse area"
               class="post-inline-img"
               width="800"
               height="500"
@@ -328,8 +342,8 @@
           <!-- IMAGE 9 — float right -->
           <figure class="post-figure post-figure--float-right post-figure--lightbox" data-testid="post-figure-9">
             <img
-              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-9.jpg"
-              alt=""
+              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-craiglockhart-trackman.jpg"
+              alt="The TrackMan golf simulator bay at Craiglockhart Tennis and Leisure Centre in Edinburgh, Scotland"
               class="post-inline-img"
               width="800"
               height="500"
@@ -363,8 +377,8 @@
           <!-- IMAGE 10 — float left -->
           <figure class="post-figure post-figure--float-left post-figure--lightbox" data-testid="post-figure-10">
             <img
-              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-10.jpg"
-              alt=""
+              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-merchants-libby-margaret.jpg"
+              alt="Libby and Margaret, members of the ladies&#39; golf group at Merchants of Edinburgh Golf Club, who welcomed Renetta for a round"
               class="post-inline-img"
               width="800"
               height="500"
@@ -385,8 +399,8 @@
           <!-- IMAGE 11 — float right -->
           <figure class="post-figure post-figure--float-right post-figure--lightbox" data-testid="post-figure-11">
             <img
-              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-11.jpg"
-              alt=""
+              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-merchants-group.jpg"
+              alt="Renetta Smith with her new golf friends at Merchants of Edinburgh Golf Club during their round together"
               class="post-inline-img"
               width="800"
               height="500"
@@ -408,8 +422,8 @@
           <!-- IMAGE 12 — float left -->
           <figure class="post-figure post-figure--float-left post-figure--lightbox" data-testid="post-figure-12">
             <img
-              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-12.jpg"
-              alt=""
+              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-bruntsfield-society-range.png"
+              alt="The driving range at Bruntsfield Links Golfing Society in Edinburgh, Scotland, where Renetta practiced after the main course was unavailable"
               class="post-inline-img"
               width="800"
               height="500"
@@ -436,8 +450,8 @@
           <!-- IMAGE 13 — float right -->
           <figure class="post-figure post-figure--float-right post-figure--lightbox" data-testid="post-figure-13">
             <img
-              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-13.jpg"
-              alt=""
+              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-bruntsfield-erin-1.jpg"
+              alt="Erin playing at Bruntsfield Links Short-Hole public golf course in Edinburgh, Scotland, with the public park in the background"
               class="post-inline-img"
               width="800"
               height="500"
@@ -454,8 +468,8 @@
           <!-- IMAGE 14 — float left -->
           <figure class="post-figure post-figure--float-left post-figure--lightbox" data-testid="post-figure-14">
             <img
-              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-14.jpg"
-              alt=""
+              src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-bruntsfield-renetta-1.png"
+              alt="Renetta Smith at Bruntsfield Links Short-Hole public golf course in Edinburgh, Scotland, reflecting on her journey from apprehension to belonging"
               class="post-inline-img"
               width="800"
               height="500"
@@ -500,6 +514,146 @@
           I&#8217;ll keep exploring.<br />
           I&#8217;ll keep swinging.<br />
           And I&#8217;ll see where the ball lands.</p>
+
+          <!-- ── PHOTO GALLERY ──────────────────────────── -->
+          <div class="post-gallery" data-testid="post-gallery">
+            <h2 class="post-gallery-heading">More from Scotland</h2>
+            <div class="post-gallery-grid">
+
+              <figure class="post-gallery-item post-figure--lightbox" data-testid="post-gallery-1">
+                <div class="post-gallery-img-wrap">
+                  <img
+                    src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-prestonfield-path.png"
+                    alt="The scenic entrance path at Prestonfield Golf Club, lined with a wooden fence and bordered by trees"
+                    width="600" height="450" loading="lazy"
+                  />
+                </div>
+                <figcaption class="post-gallery-caption">The entrance path at Prestonfield Golf Club — humble, tucked away, and easy to walk right past</figcaption>
+              </figure>
+
+              <figure class="post-gallery-item post-figure--lightbox" data-testid="post-gallery-2">
+                <div class="post-gallery-img-wrap">
+                  <img
+                    src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-prestonfield-trolley.png"
+                    alt="A Scottish golfer walking the Prestonfield Golf Club course with a hand trolley, the preferred way to carry clubs"
+                    width="600" height="450" loading="lazy"
+                  />
+                </div>
+                <figcaption class="post-gallery-caption">Hand trollies only — no golf carts at Prestonfield</figcaption>
+              </figure>
+
+              <figure class="post-gallery-item post-figure--lightbox" data-testid="post-gallery-3">
+                <div class="post-gallery-img-wrap">
+                  <img
+                    src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-prestonfield-proshop.jpg"
+                    alt="Inside the Prestonfield Golf Club Pro Shop, stocked wall-to-wall with golf gear, clubs, balls, and branded souvenirs"
+                    width="600" height="450" loading="lazy"
+                  />
+                </div>
+                <figcaption class="post-gallery-caption">The Prestonfield Pro Shop — I felt like a kid in a candy store</figcaption>
+              </figure>
+
+              <figure class="post-gallery-item post-figure--lightbox" data-testid="post-gallery-4">
+                <div class="post-gallery-img-wrap">
+                  <img
+                    src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-duddingston-fairway.jpg"
+                    alt="A third view of Duddingston Golf Club in Edinburgh, showing the course fairways and surrounding landscape"
+                    width="600" height="450" loading="lazy"
+                  />
+                </div>
+                <figcaption class="post-gallery-caption">Duddingston Golf Club — another view of the course</figcaption>
+              </figure>
+
+              <figure class="post-gallery-item post-figure--lightbox" data-testid="post-gallery-5">
+                <div class="post-gallery-img-wrap">
+                  <img
+                    src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-craiglockhart-erin.jpg"
+                    alt="Erin at the TrackMan golf simulator at Craiglockhart Tennis and Leisure Centre in Edinburgh, Scotland"
+                    width="600" height="450" loading="lazy"
+                  />
+                </div>
+                <figcaption class="post-gallery-caption">Erin at the TrackMan simulator — before we discovered the left-handed clubs 😂</figcaption>
+              </figure>
+
+              <figure class="post-gallery-item post-figure--lightbox" data-testid="post-gallery-6">
+                <div class="post-gallery-img-wrap">
+                  <img
+                    src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-craiglockhart-renetta.jpg"
+                    alt="Renetta Smith at the TrackMan golf simulator at Craiglockhart, mid-swing"
+                    width="600" height="450" loading="lazy"
+                  />
+                </div>
+                <figcaption class="post-gallery-caption">Renetta at Craiglockhart — swinging left-handed and wondering why nothing felt right</figcaption>
+              </figure>
+
+              <figure class="post-gallery-item post-figure--lightbox" data-testid="post-gallery-7">
+                <div class="post-gallery-img-wrap">
+                  <img
+                    src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-bruntsfield-society-course.jpg"
+                    alt="A view of the Bruntsfield Links Golfing Society grounds and course in Edinburgh, Scotland"
+                    width="600" height="450" loading="lazy"
+                  />
+                </div>
+                <figcaption class="post-gallery-caption">Bruntsfield Links Golfing Society — lush, beautifully maintained, and worth the detour</figcaption>
+              </figure>
+
+              <figure class="post-gallery-item post-figure--lightbox" data-testid="post-gallery-8">
+                <div class="post-gallery-img-wrap">
+                  <img
+                    src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-bruntsfield-links.jpg"
+                    alt="Bruntsfield Links Short-Hole public golf course set within a public park in Edinburgh, Scotland"
+                    width="600" height="450" loading="lazy"
+                  />
+                </div>
+                <figcaption class="post-gallery-caption">Bruntsfield Links Short-Hole — free to play, sitting right in the heart of a public park</figcaption>
+              </figure>
+
+              <figure class="post-gallery-item post-figure--lightbox" data-testid="post-gallery-9">
+                <div class="post-gallery-img-wrap">
+                  <img
+                    src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-bruntsfield-erin-2.jpg"
+                    alt="Erin playing at Bruntsfield Links Short-Hole golf course on a sunny afternoon in Edinburgh"
+                    width="600" height="450" loading="lazy"
+                  />
+                </div>
+                <figcaption class="post-gallery-caption">Erin at Bruntsfield — four pink golf balls, a sunny afternoon, and no intention of playing seriously 😂</figcaption>
+              </figure>
+
+              <figure class="post-gallery-item post-figure--lightbox" data-testid="post-gallery-10">
+                <div class="post-gallery-img-wrap">
+                  <img
+                    src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-bruntsfield-erin-3.jpg"
+                    alt="Erin putting at Bruntsfield Links Short-Hole public golf course in Edinburgh, Scotland"
+                    width="600" height="450" loading="lazy"
+                  />
+                </div>
+                <figcaption class="post-gallery-caption">Erin sizing up a putt — very seriously, of course</figcaption>
+              </figure>
+
+              <figure class="post-gallery-item post-figure--lightbox" data-testid="post-gallery-11">
+                <div class="post-gallery-img-wrap">
+                  <img
+                    src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-bruntsfield-erin-4.jpg"
+                    alt="Erin and Renetta sharing a moment at Bruntsfield Links Short-Hole golf course in Edinburgh, Scotland"
+                    width="600" height="450" loading="lazy"
+                  />
+                </div>
+                <figcaption class="post-gallery-caption">Mother and daughter at Bruntsfield — the best kind of afternoon</figcaption>
+              </figure>
+
+              <figure class="post-gallery-item post-figure--lightbox" data-testid="post-gallery-12">
+                <div class="post-gallery-img-wrap">
+                  <img
+                    src="/images/blog/beyond-the-tee-box/beyond-the-tee-box-bruntsfield-renetta-2.png"
+                    alt="Renetta Smith at Bruntsfield Links Short-Hole golf course in Edinburgh, Scotland, smiling and at ease"
+                    width="600" height="450" loading="lazy"
+                  />
+                </div>
+                <figcaption class="post-gallery-caption">Renetta at Bruntsfield — no exit strategy required this time</figcaption>
+              </figure>
+
+            </div><!-- /.post-gallery-grid -->
+          </div><!-- /.post-gallery -->
 
           <!-- ── SIGNATURE ───────────────────────────────── -->
           <figure class="post-figure post-figure--signature" data-testid="post-signature">
