@@ -5245,3 +5245,39 @@
 .post-caption-underline strong u {
   font-weight: 800;
 }
+
+/* ── Post closing: portrait + signature wrap ───────────────────────────── */
+.post-closing-wrap {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin: 2rem 0;
+}
+.post-closing-wrap__text {
+  flex: 1;
+  min-width: 0;
+}
+.post-closing-wrap__portrait {
+  flex-shrink: 0;
+  margin: 0;
+  width: 220px;
+}
+.post-closing-wrap__portrait img {
+  width: 220px;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+@media (max-width: 600px) {
+  .post-closing-wrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .post-closing-wrap__portrait {
+    width: 160px;
+  }
+  .post-closing-wrap__portrait img {
+    width: 160px;
+  }
+}
