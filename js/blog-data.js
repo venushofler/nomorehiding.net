@@ -33,7 +33,7 @@ const NMH_POSTS = [
     title: "Listen With Your Eyes…and Believe What You See",
     category: "Relationships",
     excerpt: "We keep listening to what people say while closing our eyes to what they consistently show us. But words without action eventually lose their weight—open your eyes and believe the evidence.",
-    image: "/images/blog/listen-with-your-eyes/listen-with-your-eyes-hero.jpg",
+    image: "/images/blog/listen-with-your-eyes/listen-with-your-eyes-hero.png",
     imageAlt: "Two portraits of the same woman—weary and closed off on the left, serene and clear-eyed on the right—beside the words Listen with your eyes and believe what you see",
     url: "/blog/listen-with-your-eyes/",
     published: "September 25, 2026"
