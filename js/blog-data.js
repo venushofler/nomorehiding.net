@@ -27,6 +27,18 @@ const NMH_POSTS = [
      Update images once blog post images are migrated.
   ──────────────────────────────────────────────────────────── */
 
+  // Listen With Your Eyes…and Believe What You See
+  {
+    id: "listen-with-your-eyes",
+    title: "Listen With Your Eyes…and Believe What You See",
+    category: "Relationships",
+    excerpt: "We keep listening to what people say while closing our eyes to what they consistently show us. But words without action eventually lose their weight—open your eyes and believe the evidence.",
+    image: "/images/blog/listen-with-your-eyes/listen-with-your-eyes-hero.jpg",
+    imageAlt: "Two portraits of the same woman—weary and closed off on the left, serene and clear-eyed on the right—beside the words Listen with your eyes and believe what you see",
+    url: "/blog/listen-with-your-eyes/",
+    published: "September 25, 2026"
+  },
+
   // Beyond the Tee Box: My Experience as a Woman of Color Golfing in Scotland
   {
     id: "black-woman-golfer-scotland",
@@ -54,10 +66,51 @@ const NMH_POSTS = [
   },
 
 
+  /* ── MORE STORIES GRID (index 3+) ────────────────────────────
+     These appear in the "More Stories" card grid below the hero.
+     Add images to /images/blog/ as they are migrated.
+  ──────────────────────────────────────────────────────────────────────────── */
+
+  // Listen With Your Eyes…and Believe What You See
+  {
+    id: "listen-with-your-eyes-grid",
+    title: "Listen With Your Eyes…and Believe What You See",
+    category: "Relationships",
+    excerpt: "We keep listening to what people say while closing our eyes to what they consistently show us. But words without action eventually lose their weight—open your eyes and believe the evidence.",
+    image: "/images/blog/listen-with-your-eyes/listen-with-your-eyes-hero.png",
+    imageAlt: "Two portraits of the same woman—weary and closed off on the left, serene and clear-eyed on the right—beside the words Listen with your eyes and believe what you see",
+    url: "/blog/listen-with-your-eyes/",
+    published: "September 25, 2026"
+  },
+
+  // Beyond the Tee Box: My Experience as a Woman of Color Golfing in Scotland
+  {
+    id: "beyond-the-tee-box",
+    title: "Beyond the Tee Box: My Experience as a Woman of Color Golfing in Scotland",
+    category: "Golf & Community",
+    excerpt: "It wasn't the sport itself. It was what happened when I showed up on the course and decided I belonged there.",
+    image: "/images/blog/beyond-the-tee-box/beyond-the-tee-box-hero.jpg",
+    imagePosition: "center 20%",
+    imageAlt: "A Black woman golfing on a scenic golf course with rolling hills and a cloudy sky in the background",
+    url: "/blog/beyond-the-tee-box/",
+    published: "September 9, 2026"
+  },
+
+  // Am I My Sister's Keeper?
+  {
+    id: "sisters-keeper-grid",
+    title: "Am I My Sister's Keeper?",
+    category: "Relationships",
+    excerpt: "Sisterhood alone does not entitle another woman to the privileges of friendship.",
+    image: "/images/blog/sisters-keeper/blog-sisters-keeper-hero.png",
+    imageAlt: "Four unrelated women of color standing together, arms around each other, smiling and looking confident",
+    url: "/blog/sisters-keeper/",
+    published: "August 26, 2026"
+  },
 
   // Birdies, Bogeys, and Rolling Hills: Scotland Golf Trip
   {
-    id: "birdies-bogeys",
+    id: "birdies-bogeys-grid",
     title: "Birdies, Bogeys, and Rolling Hills: Scotland Golf Trip",
     category: "Golf & Community",
     excerpt: "It wasn't the sport itself. It was what happened when I showed up on the course and decided I belonged there.",
@@ -67,11 +120,6 @@ const NMH_POSTS = [
     url: "/blog/scotland-golf-trip/",
     published: "August 10, 2026"
   },
-
-  /* ── MORE STORIES GRID (index 3+) ────────────────────────────
-     These appear in the "More Stories" card grid below the hero.
-     Add images to /images/blog/ as they are migrated.
-  ──────────────────────────────────────────────────────────── */
 
   // Living Single vs. Single Living
   {
