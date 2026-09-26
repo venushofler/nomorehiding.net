@@ -158,6 +158,13 @@ All links on every page, current slugs, and new slugs for migration.
 | The Love Language of Elder Caregiving                                                | [/the-love-language-of-elder-caregiving](https://nomorehiding.net/the-love-language-of-elder-caregiving)                                                                                                                                             | `/elder-love-language`    |
 | Unpacking Your Big Girl Feelings: Embracing Joy, Freedom, and Self-Love              | [/unpacking-your-big-girl-feelings-embracing-joy-freedom-and-self-love](https://nomorehiding.net/unpacking-your-big-girl-feelings-embracing-joy-freedom-and-self-love)                                                                               | `/big-girl-feelings`      |
 
+#### New posts (published on the static site, not migrated from WordPress):
+
+| Title                                          | Live URL                       |
+| ---------------------------------------------- | ------------------------------ |
+| Listen With Your Eyes…and Believe What You See | `/blog/listen-with-your-eyes/` |
+
+
 ---
 
 ### Community Partners
@@ -192,4 +199,4 @@ Do not migrate. No redirects needed — these are demo/unrelated content.
 
 ---
 
-_Last updated: 2026-09-19_
+_Last updated: 2026-09-25_
