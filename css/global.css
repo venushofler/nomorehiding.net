@@ -15,8 +15,11 @@
   --color-charcoal:     #4A4A4A;   /* body text, dark backgrounds */
   --color-charcoal-mid: #2e2e2e;   /* footer background */
   --color-gray-light:   #F3F3F3;   /* section backgrounds, borders */
-  --color-cream:        #fdf8f6;   /* hero / warm page backgrounds */
+  --color-cream:        #FFFCFA;   /* hero / warm page backgrounds */
   --color-white:        #ffffff;
+  --color-sage-text:    #5E6E4F;   /* accessible sage for text on light bg */
+  --color-salmon-text:  #B84A32;   /* accessible terracotta for text/links on light bg */
+  --color-muted:        #595959;   /* accessible muted gray for secondary text on light bg */
 
   /* Typography */
   --font-serif:   'Cormorant Garamond', Georgia, serif;
@@ -84,13 +87,13 @@ body {
 }
 
 a {
-  color: var(--color-salmon);
+  color: var(--color-salmon-text);
   text-decoration: none;
   transition: color var(--transition);
 }
 
 a:hover {
-  color: var(--color-salmon-dark);
+  color: var(--color-salmon-text);
 }
 
 
@@ -111,7 +114,7 @@ h5 { font-size: 16px; }
 p {
   font-weight: 300;
   line-height: 1.8;
-  color: #6a6a6a;
+  color: var(--color-muted);
 }
 
 p + p {
@@ -145,15 +148,15 @@ strong {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-sage);
+  color: var(--color-sage-text);
 }
 
 .eyebrow--salmon {
 
 .eyebrow--sage {
-  color: var(--color-sage);
+  color: var(--color-sage-text);
 }
-  color: var(--color-salmon);
+  color: var(--color-salmon-text);
 }
 
 /* Decorative inline rule before/after eyebrow */
@@ -176,7 +179,7 @@ strong {
   font-size: 10px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--color-salmon);
+  color: var(--color-salmon-text);
   font-weight: 700;
   margin-bottom: 14px;
 }
@@ -191,7 +194,7 @@ strong {
 }
 
 .section-title em {
-  color: var(--color-salmon);
+  color: var(--color-salmon-text);
   font-style: italic;
 }
 
@@ -199,7 +202,7 @@ strong {
 .body-text {
   font-size: 16px;
   line-height: 1.8;
-  color: #6a6a6a;
+  color: var(--color-muted);
   font-weight: 300;
   margin-bottom: var(--space-sm);
 }
@@ -213,7 +216,7 @@ strong {
 .signature {
   font-family: var(--font-serif);
   font-size: 22px;
-  color: var(--color-sage);
+  color: var(--color-sage-text);
   font-style: italic;
   margin-top: var(--space-xs);
 }
@@ -282,7 +285,7 @@ strong {
 .btn--outline {
   background: transparent;
   border: 2px solid var(--color-salmon);
-  color: var(--color-salmon);
+  color: var(--color-salmon-text);
 }
 
 .btn--outline:hover {
@@ -316,7 +319,7 @@ strong {
 }
 
 .btn--text:hover {
-  color: var(--color-sage);
+  color: var(--color-sage-text);
 }
 
 /* Ghost / text for dark backgrounds */
@@ -346,7 +349,7 @@ strong {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: #bbb;
+  color: var(--color-muted);
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;

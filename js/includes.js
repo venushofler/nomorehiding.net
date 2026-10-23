@@ -105,16 +105,7 @@
       </div>
     </div>
  
-    <div>
-      <div class="footer-col-head">Resources</div>
-      <div class="footer-links">
-        <a href="#">Free Downloads</a>
-        <a href="#">Podcast</a>
-        <a href="#">Speaking</a>
-        <a href="#">Press Kit</a>
-        <a href="#">Shop</a>
-      </div>
-    </div>
+    <!-- Resources column hidden until its destination pages exist (Free Downloads, Podcast, Speaking, Press Kit, Shop) -->
  
     <div>
       <div class="footer-col-head">Stay Connected</div>
