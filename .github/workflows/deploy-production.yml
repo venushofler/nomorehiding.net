@@ -40,7 +40,7 @@ jobs:
           # If your production FTP account is scoped to the live docroot (like the staging
           # account is), keep "/". If one account serves the whole server, set the live
           # path instead, e.g.  server-dir: /public_html/
-          server-dir: /
+          server-dir: /public_html/
           exclude: |
             **/.git*
             **/.git*/**
