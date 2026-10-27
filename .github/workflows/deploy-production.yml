@@ -1,0 +1,49 @@
+name: Deploy to Production (manual)
+
+# Manual only. Run this from the Actions tab AFTER you've verified staging looks good.
+# It publishes the current `main` branch to the LIVE site.
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type DEPLOY to confirm publishing to the LIVE site'
+        required: true
+        default: ''
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # Optional safety: add required reviewers under Settings > Environments > production
+    environment: production
+    steps:
+      - name: Verify confirmation
+        if: ${{ github.event.inputs.confirm != 'DEPLOY' }}
+        run: |
+          echo "::error::You must type DEPLOY to confirm. Aborting."
+          exit 1
+
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Deploy via FTP (production)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER_PROD }}
+          username: ${{ secrets.FTP_USERNAME_PROD }}
+          password: ${{ secrets.FTP_PASSWORD_PROD }}
+          # If your production FTP account is scoped to the live docroot (like the staging
+          # account is), keep "/". If one account serves the whole server, set the live
+          # path instead, e.g.  server-dir: /public_html/
+          server-dir: /
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/sftp.json
+            **/README.md
