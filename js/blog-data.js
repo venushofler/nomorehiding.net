@@ -45,7 +45,7 @@ const NMH_POSTS = [
     title: "Beyond the Tee Box: My Experience as a Woman of Color Golfing in Scotland",
     category: "Golf & Community",
     excerpt: "It wasn't the sport itself. It was what happened when I showed up on the course and decided I belonged there.",
-    image: "/images/blog/scotland-golf-trip/beyond-the-tee-box-hero.png",
+    image: "/images/blog/beyond-the-tee-box/beyond-the-tee-box-hero.png",
     imagePosition: "center 20%",
     imageAlt: "A Black woman golfing from an earlier century, standing on a scenic golf course with rolling hills and a cloudy sky in the background",
     url: "/blog/beyond-the-tee-box/",
