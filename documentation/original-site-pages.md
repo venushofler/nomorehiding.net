@@ -111,6 +111,5 @@ Example: `original-blogs/original-different-lanes.html` is the old version of th
 If these ever need to be re-done or expanded, the originals are kept on the
 project owner's computer:
 
-- SingleFile saves: the `site migration` folder in OneDrive (under `Renetta`)
-- SiteOne crawl (full offline mirror): the `SiteOne-Crawler` folder on the
-  Desktop (its `nomorehiding.net` subfolder)
+- SingleFile saves: `C:\Users\vhofl\OneDrive\Renetta\site migration\` (the `site migration` folder in OneDrive under `Renetta`)
+- SiteOne crawl (full offline mirror): `C:\Users\vhofl\OneDrive\Desktop\SiteOne-Crawler\nomorehiding.net\` (the `SiteOne-Crawler` folder on the Desktop, under its `nomorehiding.net` subfolder)
