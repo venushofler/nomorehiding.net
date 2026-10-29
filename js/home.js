@@ -27,8 +27,19 @@
 
     if (!slides.length) return;
 
-    // Single hero (carousel collapsed): just play the video, skip rotation/controls
-    if (slides.length < 2) { playVideo(videos[0]); return; }
+    // Single hero (carousel collapsed): play the video on continuous loop, skip rotation/controls
+    if (slides.length < 2) {
+      var heroVid = videos[0];
+      if (heroVid) {
+        heroVid.loop = true;
+        heroVid.addEventListener('ended', function () {
+          heroVid.currentTime = 0;
+          heroVid.play().catch(function () {});
+        });
+      }
+      playVideo(videos[0]);
+      return;
+    }
 
     let current    = 0;
     let timer      = null;
