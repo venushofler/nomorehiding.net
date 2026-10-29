@@ -27,8 +27,37 @@
 
     if (!slides.length) return;
 
-    // Single hero (carousel collapsed): just play the video, skip rotation/controls
-    if (slides.length < 2) { playVideo(videos[0]); return; }
+    // Single hero: cycle continuously through the playlist (data-hero-playlist); skip carousel controls
+    if (slides.length < 2) {
+      var heroVid = videos[0];
+      if (heroVid) {
+        var raw = heroVid.getAttribute('data-hero-playlist') || '';
+        var parts = raw.split(',');
+        var clips = [];
+        for (var k = 0; k < parts.length; k++) {
+          var u = parts[k].replace(/^\s+|\s+$/g, '');
+          if (u) clips.push(u);
+        }
+        if (clips.length > 1) {
+          heroVid.loop = false;
+          var idx = 0;
+          heroVid.addEventListener('ended', function () {
+            idx = (idx + 1) % clips.length;
+            heroVid.src = clips[idx];
+            heroVid.load();
+            heroVid.play().catch(function () {});
+          });
+        } else {
+          heroVid.loop = true;
+          heroVid.addEventListener('ended', function () {
+            heroVid.currentTime = 0;
+            heroVid.play().catch(function () {});
+          });
+        }
+      }
+      playVideo(videos[0]);
+      return;
+    }
 
     let current    = 0;
     let timer      = null;
