@@ -54,21 +54,15 @@
     ══════════════════════════════════════════════════════════ -->
       <section
         class="carousel"
-        aria-label="Featured content slideshow"
-        aria-roledescription="carousel"
+        aria-label="no more hiding&#8482; — Live Whole. Live Seen. Live Free."
         data-testid="hero-carousel"
       >
-        <div
-          class="carousel-track"
-          aria-live="off"
-          data-testid="carousel-track"
-        >
-          <!-- ── Slide 1 ── -->
+        <div class="carousel-track" aria-live="off" data-testid="carousel-track">
+          <!-- ── Single hero ── -->
           <div
             class="carousel-slide is-active"
             role="group"
-            aria-roledescription="slide"
-            aria-label="Slide 1 of 3: Stop Hiding. Start Living."
+            aria-label="Live Whole. Live Seen. Live Free."
             data-testid="carousel-slide-1"
           >
             <video
@@ -82,189 +76,26 @@
               data-testid="carousel-video-1"
               poster="/images/home/pexels-photo-8818544.jpg"
             >
-              <source src="/videos/home/nmh-main-hero.mp4" type="video/mp4" />
+              <source src="/videos/home/homepage-hero.mp4" type="video/mp4" />
             </video>
             <div class="carousel-overlay" aria-hidden="true"></div>
             <div class="carousel-content">
-              <div class="carousel-eyebrow">Welcome to no more hiding&#8482;</div>
-              <h1 class="carousel-title">Stop Hiding.<br />Start Living.</h1>
+              <div class="carousel-eyebrow">no more hiding&#8482;</div>
+              <h1 class="carousel-title">Live Whole.<br />Live Seen.<br />Live Free.</h1>
               <p class="carousel-caption">
-                A community for women ready to live whole, seen, and free.
+                no more hiding&#8482; creates safe, inspiring spaces where women in mid-life and beyond reconnect with themselves through honest conversation, meaningful experiences, community, and intentional selfwork.
               </p>
               <a
                 href="/start-here/"
                 class="carousel-cta btn-primary"
                 data-testid="hero-cta-1"
               >
-                Start Here <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- ── Slide 2 ── -->
-          <div
-            class="carousel-slide"
-            role="group"
-            aria-roledescription="slide"
-            aria-label="Slide 2 of 3: You Were Made for More."
-            data-testid="carousel-slide-2"
-          >
-            <video
-              class="carousel-video"
-              muted
-              playsinline
-              preload="none"
-              aria-hidden="true"
-              data-testid="carousel-video-2"
-              poster="/images/home/tribe2.jpg"
-            >
-              <source src="/videos/AdobeStock_619444915.mp4" type="video/mp4" />
-            </video>
-            <div class="carousel-overlay" aria-hidden="true"></div>
-            <div class="carousel-content">
-              <div class="carousel-eyebrow">Built for Women Like You</div>
-              <h2 class="carousel-title">You Were Made<br />for More.</h2>
-              <p class="carousel-caption">
-                Meaningful experiences, genuine connection, and the freedom to rediscover what’s next.
-              </p>
-              <a
-                href="/about/"
-                class="carousel-cta btn-primary"
-                data-testid="hero-cta-2"
-              >
-                Our Story <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- ── Slide 3 ── -->
-          <div
-            class="carousel-slide"
-            role="group"
-            aria-roledescription="slide"
-            aria-label="Slide 3 of 3: Your Next Chapter Starts Here."
-            data-testid="carousel-slide-3"
-          >
-            <video
-              class="carousel-video"
-              muted
-              playsinline
-              preload="none"
-              aria-hidden="true"
-              data-testid="carousel-video-3"
-              poster="/images/home/tribe2-FXdwTMCWtsjjfptC.jpg"
-            >
-              <source src="/videos/AdobeStock_673253370.mp4" type="video/mp4" />
-            </video>
-            <div class="carousel-overlay" aria-hidden="true"></div>
-            <div class="carousel-content">
-              <div class="carousel-eyebrow">Events &amp; Community</div>
-              <h2 class="carousel-title">
-                Your Next Chapter<br />Starts Here.
-              </h2>
-              <p class="carousel-caption">
-                Connect, explore, and make room for what’s next.
-              </p>
-              <a
-                href="/events/"
-                class="carousel-cta btn-primary"
-                data-testid="hero-cta-3"
-              >
-                See Events <span aria-hidden="true">→</span>
+                Living Fully Starts Here <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
         </div>
         <!-- /.carousel-track -->
-
-        <!-- Prev / Next controls -->
-        <button
-          class="carousel-arrow carousel-arrow--prev"
-          aria-label="Previous slide"
-          data-testid="hero-prev-btn"
-          type="button"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
-        <button
-          class="carousel-arrow carousel-arrow--next"
-          aria-label="Next slide"
-          data-testid="hero-next-btn"
-          type="button"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
-        </button>
-
-        <!-- Dot navigation -->
-        <div
-          class="carousel-dots"
-          role="tablist"
-          aria-label="Slide navigation"
-          data-testid="hero-dots"
-        >
-          <button
-            class="carousel-dot is-active"
-            role="tab"
-            aria-selected="true"
-            aria-label="Slide 1"
-            data-slide="0"
-            data-testid="hero-dot-1"
-            type="button"
-          ></button>
-          <button
-            class="carousel-dot"
-            role="tab"
-            aria-selected="false"
-            aria-label="Slide 2"
-            data-slide="1"
-            data-testid="hero-dot-2"
-            type="button"
-          ></button>
-          <button
-            class="carousel-dot"
-            role="tab"
-            aria-selected="false"
-            aria-label="Slide 3"
-            data-slide="2"
-            data-testid="hero-dot-3"
-            type="button"
-          ></button>
-        </div>
-
-        <!-- Slide counter -->
-        <div
-          class="carousel-counter"
-          aria-hidden="true"
-          data-testid="hero-counter"
-        >
-          <span data-testid="hero-counter-current">1</span>&nbsp;/&nbsp;<span
-            >3</span
-          >
-        </div>
       </section>
       <!-- /.carousel -->
 
@@ -547,12 +378,7 @@
         data-testid="cta-banner"
       >
         <div class="cta-banner-inner">
-          <div class="cta-eyebrow">Ready to Stop Hiding?</div>
-          <h2 id="cta-heading" class="cta-title">Your Community Is Waiting.</h2>
-          <p class="cta-subtitle">
-            Women across the country are living whole, seen, and free. Come join
-            us.
-          </p>
+          <h2 id="cta-heading" class="cta-title">The best version of you was never meant to be hidden.</h2>
           <div
             class="cta-actions"
             role="group"
@@ -560,14 +386,14 @@
           >
             <a
               href="/start-here/"
-              class="btn btn-primary"
+              class="btn btn--white"
               data-testid="cta-primary-btn"
             >
               Start Here
             </a>
             <a
               href="/events/"
-              class="btn btn-ghost"
+              class="btn btn--ghost"
               data-testid="cta-secondary-btn"
             >
               See Upcoming Events

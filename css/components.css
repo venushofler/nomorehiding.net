@@ -1469,12 +1469,12 @@
   pointer-events: none;
 }
 
-.cta-inner {
+.cta-banner-inner {
   position: relative;
   z-index: 2;
 }
 
-.cta-label {
+.cta-eyebrow {
   font-size: 10px;
   letter-spacing: 0.26em;
   text-transform: uppercase;
@@ -1494,7 +1494,7 @@
   opacity: 0.5;
 }
 
-.cta-headline {
+.cta-title {
   font-family: var(--font-serif);
   font-size: clamp(32px, 5vw, 60px);
   line-height: 1.05;
@@ -1503,12 +1503,12 @@
   margin-bottom: 20px;
 }
 
-.cta-headline em {
+.cta-title em {
   color: var(--color-salmon-text);
   font-style: italic;
 }
 
-.cta-sub {
+.cta-subtitle {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 48px;
