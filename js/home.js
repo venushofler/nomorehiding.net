@@ -27,6 +27,9 @@
 
     if (!slides.length) return;
 
+    // Single hero (carousel collapsed): just play the video, skip rotation/controls
+    if (slides.length < 2) { playVideo(videos[0]); return; }
+
     let current    = 0;
     let timer      = null;
     let isPaused   = false;
