@@ -1007,12 +1007,20 @@
 .post-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(74, 74, 74, 0.95) 0%,
-    rgba(74, 74, 74, 0.55) 35%,
-    rgba(74, 74, 74, 0) 65%
-  );
+  background:
+    linear-gradient(
+      to right,
+      rgba(74, 74, 74, 0.55) 0%,
+      rgba(74, 74, 74, 0.22) 45%,
+      rgba(74, 74, 74, 0) 72%
+    ),
+    linear-gradient(
+      to top,
+      rgba(74, 74, 74, 0.95) 0%,
+      rgba(74, 74, 74, 0.75) 45%,
+      rgba(74, 74, 74, 0.4) 75%,
+      rgba(74, 74, 74, 0.12) 100%
+    );
 }
 
 .post-hero-content {
@@ -1034,8 +1042,9 @@
 
 .post-hero-content .post-breadcrumb a,
 .post-hero-content .post-breadcrumb span {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 12px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 .post-hero-content .post-breadcrumb a:hover {
@@ -1049,6 +1058,7 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-sage-text);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 /* Title */
@@ -1056,9 +1066,11 @@
   font-family: var(--font-serif);
   font-size: clamp(32px, 5vw, 60px);
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-cream);
   line-height: 1.05;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  text-shadow:
+    0 2px 16px rgba(0, 0, 0, 0.78),
+    0 1px 4px rgba(0, 0, 0, 0.55);
   margin: 0;
 }
 
@@ -1066,10 +1078,11 @@
 .post-hero-deck {
   font-size: 18px;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.65;
   max-width: 640px;
   margin: 0;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
 }
 
 /* Byline / meta row */
