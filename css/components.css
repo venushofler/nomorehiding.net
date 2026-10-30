@@ -2746,8 +2746,57 @@
 }
 
 .post-figure--compact .post-inline-img {
-  max-width: 420px;
+  max-width: 340px;
   margin-inline: auto;
+}
+
+.post-figure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 40px 0;
+  align-items: start;
+}
+
+.post-figure-grid .post-figure {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .post-figure-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.post-figure--beside {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.post-figure--beside .post-inline-img {
+  width: 100%;
+}
+
+.post-figure--beside .post-figure-caption {
+  text-align: left;
+  margin-top: 0;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .post-figure--beside {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .post-figure--beside .post-inline-img {
+    max-width: 320px;
+  }
+  .post-figure--beside .post-figure-caption {
+    text-align: center;
+  }
 }
 
 .post-figure--signature {
