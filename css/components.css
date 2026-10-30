@@ -2745,6 +2745,11 @@
   margin: 40px 0;
 }
 
+.post-figure--compact .post-inline-img {
+  max-width: 420px;
+  margin-inline: auto;
+}
+
 .post-figure--signature {
   text-align: center;
 }
