@@ -1590,7 +1590,7 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr; /* 3rd col (Stay Connected) temporarily hidden; restore to 2fr 1fr 1fr when social links are added back */
   gap: 48px;
   margin-bottom: 60px;
   padding-bottom: 60px;

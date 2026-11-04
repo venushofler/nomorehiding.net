@@ -64,6 +64,7 @@
         </a>
       </div>
       <p class="footer-tagline">Live Whole. Live Seen. Live Free.</p>
+      <!-- Social icons hidden until accounts are verified
       <div class="footer-socials">
         <a href="#" class="f-social" aria-label="Facebook" target="_blank" rel="noopener">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
@@ -90,6 +91,7 @@
           </svg>
         </a>
       </div>
+      -->
     </div>
  
     <div>
@@ -107,6 +109,7 @@
  
     <!-- Resources column hidden until its destination pages exist (Free Downloads, Podcast, Speaking, Press Kit, Shop) -->
  
+    <!-- "Stay Connected" column hidden until newsletter/social links are verified
     <div>
       <div class="footer-col-head">Stay Connected</div>
       <div class="footer-links">
@@ -116,6 +119,7 @@
         <a href="#">YouTube</a>
       </div>
     </div>
+    -->
  
   </div>
  
