@@ -5505,3 +5505,196 @@
 @media (max-width: 600px) {
   .event-notice-inner { padding: 1.5rem 1.25rem; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   COMMUNITY PARTNERS  (data-page="community-partners")
+   Reuses .page-hero, .about-cards-*, .cta-band.
+   Adds partner category sections + partner cards.
+   ═══════════════════════════════════════════════════════════ */
+.partner-intro {
+  padding: var(--section-pad-v) var(--section-pad-h) 56px;
+  background: #fff;
+}
+.partner-intro-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.partner-intro-inner p {
+  color: var(--color-charcoal);
+  line-height: 1.85;
+  font-size: 17px;
+  margin: 0;
+}
+
+/* Category section wrapper — alternating backgrounds */
+.partner-section {
+  padding: var(--section-pad-v) var(--section-pad-h);
+  background: #fff;
+  scroll-margin-top: 80px;
+}
+.partner-section--alt { background: var(--color-cream); }
+.partner-section-inner { max-width: 1100px; margin: 0 auto; }
+.partner-section-header { max-width: 640px; margin: 0 auto 44px; text-align: center; }
+.partner-section-header .bio-heading { margin-top: 6px; }
+
+/* Card grid */
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+.partner-grid--single {
+  grid-template-columns: minmax(0, 640px);
+  justify-content: center;
+}
+
+/* Partner card */
+.partner-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 3px solid var(--color-salmon);
+  border-radius: var(--radius-md);
+  padding: 32px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.partner-card:hover {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+.partner-card-name {
+  font-family: var(--font-serif);
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  line-height: 1.25;
+}
+.partner-card-services {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-sage-text);
+}
+.partner-card-desc {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--color-charcoal);
+  margin: 0;
+}
+.partner-card-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--color-salmon-text);
+  border-left: 3px solid var(--color-sage);
+  padding-left: 16px;
+  margin: 2px 0;
+}
+.partner-card-features {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-charcoal);
+}
+.partner-card-features li { margin-bottom: 4px; }
+
+/* Meta list (owner / address / phone / email) */
+.partner-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 2px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--color-gray-light);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+.partner-card-meta .meta-label { font-weight: 700; color: var(--color-charcoal); }
+.partner-card-meta a { color: var(--color-salmon-text); text-decoration: none; }
+.partner-card-meta a:hover { text-decoration: underline; }
+
+/* Coming-soon badge */
+.partner-badge {
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--color-sage-text);
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+.partner-card--coming-soon { border-top-color: var(--color-sage); }
+
+/* Product note */
+.partner-card-product {
+  background: var(--color-gray-light);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-charcoal);
+}
+.partner-card-product strong { display: block; margin-bottom: 4px; }
+.partner-card-product .product-price { color: var(--color-salmon-text); font-weight: 700; }
+
+/* Website / action links */
+.partner-card-actions {
+  margin-top: auto;
+  padding-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.partner-card-actions a {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-salmon-text);
+  text-decoration: none;
+}
+.partner-card-actions a:hover { color: var(--color-salmon-dark); }
+
+/* "Become a partner" invitation panel */
+.partner-invite {
+  background: linear-gradient(135deg, #FFFCFA 0%, #eef2ea 100%);
+  border: 1px dashed var(--color-sage);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.partner-invite p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-charcoal);
+  max-width: 560px;
+  margin: 0 auto 16px;
+}
+.partner-invite .partner-invite-email {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--color-salmon-text);
+  text-decoration: none;
+}
+.partner-invite .partner-invite-email:hover { text-decoration: underline; }
+
+@media (max-width: 600px) {
+  .partner-grid { grid-template-columns: 1fr; }
+  .partner-card { padding: 26px 22px; }
+}

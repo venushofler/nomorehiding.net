@@ -1,23 +1,496 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Community Partners — no more hiding</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lato:wght@300;400;700&display=swap">
-  <link rel="stylesheet" href="/css/global.css">
-  <link rel="stylesheet" href="/css/components.css"></head>
-<body data-page="community-partners">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Partners — no more hiding</title>
+    <meta
+      name="description"
+      content="Local businesses, professionals, and organizations that serve the no more hiding™ community — trusted partners in wellness, caregiving, mental health, lifestyle, and more."
+    />
 
-  <div id="site-nav"></div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Lato:wght@300;400;700&display=swap"
+    />
 
-  <main>
-    <!-- Community Partners content goes here -->
-  </main>
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/components.css" /></head>
+  <body data-page="community-partners">
+    <div id="site-nav" data-testid="site-nav" role="banner"></div>
 
-  <div id="site-footer"></div>
-  <script src="/js/includes.js"></script>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<script src="/js/global.js"></script>
-</body>
+    <main id="main-content" data-testid="main-content">
+      <!-- ═══════════════════════════════════════════════════════
+         PAGE HERO
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        class="page-hero"
+        aria-label="Community Partners page hero"
+        data-testid="page-hero"
+      >
+        <div class="page-hero-inner">
+          <div class="page-hero-eyebrow eyebrow">Walking This Path Together</div>
+          <h1 class="page-hero-title">Community <em>Partners</em></h1>
+          <p class="page-hero-subtitle">
+            Local businesses, professionals, and organizations that share our
+            commitment to helping women live whole, live seen, and live free.
+          </p>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         INTRO
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        class="partner-intro"
+        aria-label="About our community partners"
+        data-testid="partner-intro"
+      >
+        <div class="partner-intro-inner">
+          <p>
+            At no more hiding&#8482;, we believe healing, growth, and support
+            happen through connection. We're proud to highlight local
+            businesses, professionals, and organizations that serve our
+            community and share our commitment to helping women live whole, live
+            seen, and live free. The businesses featured on this page are
+            organizations that have positively impacted members of the no more
+            hiding&#8482; community through support, encouragement, expertise,
+            and genuine care.
+          </p>
+          <p>
+            Every partner featured here represents a different pathway to
+            healing, growth, connection, and living fully. Whether you're
+            looking for wellness resources, personal services, community
+            experiences, or trusted local professionals, we encourage you to
+            explore the businesses featured below.
+          </p>
+          <p>
+            Interested in becoming a Community Partner?
+            <a href="/contact/">Contact us</a> to learn more.
+          </p>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         QUICK-NAV CATEGORY CARDS
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        class="about-cards-section"
+        aria-label="Partner categories"
+        data-testid="partner-category-nav"
+      >
+        <div class="about-cards-inner">
+          <a href="#caregiving-family" class="about-card no-ext-icon">
+            <div class="about-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21C12 21 3 14 3 8a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-9 13-9 13z"/></svg>
+            </div>
+            <div class="about-card-title">Caregiving & Family Resources</div>
+            <span class="about-card-link">Explore →</span>
+          </a>
+
+          <a href="#cosmetology-dermatology" class="about-card no-ext-icon">
+            <div class="about-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></svg>
+            </div>
+            <div class="about-card-title">Cosmetology & Dermatology</div>
+            <span class="about-card-link">Explore →</span>
+          </a>
+
+          <a href="#interior-design-lifestyle" class="about-card no-ext-icon">
+            <div class="about-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 10l9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+            </div>
+            <div class="about-card-title">Interior Design & Lifestyle</div>
+            <span class="about-card-link">Explore →</span>
+          </a>
+
+          <a href="#mental-health-wellness" class="about-card no-ext-icon">
+            <div class="about-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
+            </div>
+            <div class="about-card-title">Mental Health & Emotional Wellness</div>
+            <span class="about-card-link">Explore →</span>
+          </a>
+
+          <a href="#social-clubs-community" class="about-card no-ext-icon">
+            <div class="about-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="about-card-title">Social Clubs & Community</div>
+            <span class="about-card-link">Explore →</span>
+          </a>
+
+          <a href="#sports-hobbies" class="about-card no-ext-icon">
+            <div class="about-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 21V3M6 3h12l-3 4 3 4H6"/></svg>
+            </div>
+            <div class="about-card-title">Sports & Hobbies</div>
+            <span class="about-card-link">Explore →</span>
+          </a>
+
+          <a href="#nutrition-wellness-aging" class="about-card no-ext-icon">
+            <div class="about-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 4 13C4 7 11 4 20 4c0 9-4 16-9 16z"/><path d="M4 13c6 0 12 4 12 7"/></svg>
+            </div>
+            <div class="about-card-title">Nutrition, Wellness & Healthy Aging</div>
+            <span class="about-card-link">Explore →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         CAREGIVING & FAMILY RESOURCES
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        id="caregiving-family"
+        class="partner-section"
+        aria-labelledby="caregiving-family-heading"
+        data-testid="category-caregiving-family"
+      >
+        <div class="partner-section-inner">
+          <div class="partner-section-header">
+            <div class="bio-eyebrow">Category</div>
+            <h2 id="caregiving-family-heading" class="bio-heading">
+              Caregiving &amp; <em>Family Resources</em>
+            </h2>
+          </div>
+          <div class="partner-grid partner-grid--single">
+            <article class="partner-card partner-card--coming-soon">
+              <span class="partner-badge">Coming March 2027</span>
+              <h3 class="partner-card-name">Eldercare Resource Hub&#8482;</h3>
+              <p class="partner-card-desc">
+                Caring for an aging loved one can leave you wondering where to
+                start. Eldercare Resource Hub&#8482; gives family elder
+                caregivers a trusted source to explore resources as they
+                navigate care decisions and support their loved ones.
+              </p>
+              <ul class="partner-card-features">
+                <li>Downloadable, editable Word/PDF forms, tools, and templates</li>
+                <li>Articles and videos</li>
+                <li>Federal Resources Directory</li>
+                <li>Quarterly newsletter</li>
+              </ul>
+              <p class="partner-card-tagline">Knowledge · Tools · Guidance · Support</p>
+              <div class="partner-card-meta">
+                <div><span class="meta-label">Owner:</span> Renetta Smith, CEO, no more hiding&#8482;</div>
+                <div><span class="meta-label">Website:</span> www.eldercareresourcehub.com <em>(coming March 2027)</em></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         COSMETOLOGY & DERMATOLOGY  (open — invite)
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        id="cosmetology-dermatology"
+        class="partner-section partner-section--alt"
+        aria-labelledby="cosmetology-dermatology-heading"
+        data-testid="category-cosmetology-dermatology"
+      >
+        <div class="partner-section-inner">
+          <div class="partner-section-header">
+            <div class="bio-eyebrow">Category</div>
+            <h2 id="cosmetology-dermatology-heading" class="bio-heading">
+              Cosmetology &amp; <em>Dermatology</em>
+            </h2>
+          </div>
+          <div class="partner-invite">
+            <p>
+              If you're a licensed business owner interested in becoming a no
+              more hiding&#8482; community partner, we'd love to hear from you.
+              Contact us to learn more about becoming a no more hiding community
+              partner.
+            </p>
+            <a class="partner-invite-email" href="mailto:partnerships@nomorehiding.net">partnerships@nomorehiding.net</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         INTERIOR DESIGN & LIFESTYLE
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        id="interior-design-lifestyle"
+        class="partner-section"
+        aria-labelledby="interior-design-lifestyle-heading"
+        data-testid="category-interior-design-lifestyle"
+      >
+        <div class="partner-section-inner">
+          <div class="partner-section-header">
+            <div class="bio-eyebrow">Category</div>
+            <h2 id="interior-design-lifestyle-heading" class="bio-heading">
+              Interior Design &amp; <em>Lifestyle</em>
+            </h2>
+          </div>
+          <div class="partner-grid partner-grid--single">
+            <article class="partner-card">
+              <h3 class="partner-card-name">A Refined Me.</h3>
+              <div class="partner-card-services">Refined…Lifestyle Collective · Interior Design · Etiquette &amp; Manners Workshops</div>
+              <p class="partner-card-tagline">The art of REFINED living.</p>
+              <div class="partner-card-meta">
+                <div><span class="meta-label">Owner:</span> Karen Atkins Purifoy, Lifestyle Curator / Certified Etiquette Professional</div>
+                <div><span class="meta-label">Email:</span> <a href="mailto:info@a-refinedme.com">info@a-refinedme.com</a></div>
+                <div><span class="meta-label">Phone:</span> <a href="tel:+12029937779">(202) 993-7779</a></div>
+              </div>
+              <div class="partner-card-actions">
+                <a href="https://www.a-refinedme.com/services-1" target="_blank" rel="noopener">Visit website</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         MENTAL HEALTH & EMOTIONAL WELLNESS
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        id="mental-health-wellness"
+        class="partner-section partner-section--alt"
+        aria-labelledby="mental-health-wellness-heading"
+        data-testid="category-mental-health-wellness"
+      >
+        <div class="partner-section-inner">
+          <div class="partner-section-header">
+            <div class="bio-eyebrow">Category</div>
+            <h2 id="mental-health-wellness-heading" class="bio-heading">
+              Mental Health &amp; <em>Emotional Wellness</em>
+            </h2>
+          </div>
+          <div class="partner-grid">
+            <article class="partner-card">
+              <h3 class="partner-card-name">Serene Solutions Counseling &amp; Consulting Services</h3>
+              <p class="partner-card-desc">
+                Provides compassionate therapy and evaluations specializing in
+                maternal mental health, anxiety, grief and loss, women's issues,
+                trauma, and life transitions. Serving VA, MD, PA, MA, and FL
+                through in-person and virtual appointments.
+              </p>
+              <p class="partner-card-tagline">Supporting Women Through Life's Changing Seasons</p>
+              <div class="partner-card-meta">
+                <div><span class="meta-label">Owner:</span> Sharnece Thomas, MA, LPC</div>
+                <div><span class="meta-label">Address:</span> 3975 University Drive, Suite 210, Fairfax, VA 22030</div>
+                <div><span class="meta-label">Phone:</span> <a href="tel:+17032675704">(703) 267-5704</a></div>
+                <div><span class="meta-label">Email:</span> <a href="mailto:sthomas@serenesolutionscc.com">sthomas@serenesolutionscc.com</a></div>
+              </div>
+              <div class="partner-card-actions">
+                <a href="https://www.serenesolutionsccs.com/" target="_blank" rel="noopener">Visit website</a>
+              </div>
+            </article>
+
+            <article class="partner-card">
+              <h3 class="partner-card-name">Reaching Peace, LLC</h3>
+              <p class="partner-card-desc">
+                Reaching Peace, LLC is committed to promoting positivity,
+                emotional well-being, and purposeful living. Through mentoring
+                and coaching, Reaching Peace creates a supportive environment
+                where clients are encouraged to grow, heal, and reconnect with
+                their potential. Keesha's mission is to offer guidance that
+                helps clients build confidence, find a renewed sense of purpose,
+                and work toward lasting personal success.
+              </p>
+              <div class="partner-card-product">
+                <strong>The Peaceful Reset <span class="product-price">— $19.99</span></strong>
+                Press reset, find peace, step into your best self. A
+                transformative guide to reclaiming your inner calm, resetting
+                your mindset, and stepping boldly into the life you deserve.
+              </div>
+              <div class="partner-card-meta">
+                <div><span class="meta-label">Owner:</span> Dr. Keesha Holmes</div>
+                <div><span class="meta-label">Phone:</span> <a href="tel:+13472216810">(347) 221-6810</a></div>
+                <div><span class="meta-label">Email:</span> <a href="mailto:info@reachingpeacewellness.com">info@reachingpeacewellness.com</a></div>
+              </div>
+              <div class="partner-card-actions">
+                <a href="https://reachingpeacewellness.com" target="_blank" rel="noopener">Visit website</a>
+              </div>
+            </article>
+
+            <article class="partner-card">
+              <h3 class="partner-card-name">High Vibes Healing Center</h3>
+              <div class="partner-card-services">Spinal Flow · Reiki</div>
+              <p class="partner-card-desc">
+                Offers holistic wellness experiences that help restore balance
+                through natural healing.
+              </p>
+              <p class="partner-card-tagline">
+                Your body already knows how to heal. High Vibes Healing Center
+                helps it remember.
+              </p>
+              <div class="partner-card-meta">
+                <div><span class="meta-label">Owner:</span> Amanda Fries</div>
+                <div><span class="meta-label">Address:</span> 3355 St. John's Lane, Suite J, Ellicott City, MD 21043</div>
+                <div><span class="meta-label">Phone:</span> <a href="tel:+12035707458">(203) 570-7458</a></div>
+                <div><span class="meta-label">Email:</span> <a href="mailto:Amanda@HighVibesHealingCenter.com">Amanda@HighVibesHealingCenter.com</a></div>
+              </div>
+              <div class="partner-card-actions">
+                <a href="https://www.highvibeshealingcenter.com" target="_blank" rel="noopener">Visit website</a>
+              </div>
+            </article>
+
+            <article class="partner-card">
+              <h3 class="partner-card-name">Wish You Knew</h3>
+              <div class="partner-card-services">Somatic Stress Release&#8482;</div>
+              <p class="partner-card-desc">
+                Somatic Stress Release for chronic pain, autoimmune flares,
+                sleep disturbances, and diagnoses of mental-health challenges or
+                neurodivergence that impact daily activities. Offerings include
+                Modality Workshops, Centering Sundays, Rage Circles, and
+                Retreats.
+              </p>
+              <div class="partner-card-meta">
+                <div><span class="meta-label">Owner:</span> Karen Bortvedt Estrada, Somatic Stress Release&#8482; Practitioner</div>
+                <div><span class="meta-label">Email:</span> <a href="mailto:Karen@WishYouKnew.net">Karen@WishYouKnew.net</a></div>
+              </div>
+              <div class="partner-card-actions">
+                <a href="https://www.wishyouknew.net" target="_blank" rel="noopener">Visit website</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         SOCIAL CLUBS & COMMUNITY  (open — invite)
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        id="social-clubs-community"
+        class="partner-section"
+        aria-labelledby="social-clubs-community-heading"
+        data-testid="category-social-clubs-community"
+      >
+        <div class="partner-section-inner">
+          <div class="partner-section-header">
+            <div class="bio-eyebrow">Category</div>
+            <h2 id="social-clubs-community-heading" class="bio-heading">
+              Social Clubs &amp; <em>Community</em>
+            </h2>
+          </div>
+          <div class="partner-invite">
+            <p>
+              If you're a licensed business owner with a heart for helping women
+              find community, we'd love to hear from you. Contact us to learn
+              more about becoming a no more hiding&#8482; community partner.
+            </p>
+            <a class="partner-invite-email" href="mailto:partnerships@nomorehiding.net">partnerships@nomorehiding.net</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         SPORTS & HOBBIES
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        id="sports-hobbies"
+        class="partner-section partner-section--alt"
+        aria-labelledby="sports-hobbies-heading"
+        data-testid="category-sports-hobbies"
+      >
+        <div class="partner-section-inner">
+          <div class="partner-section-header">
+            <div class="bio-eyebrow">Category</div>
+            <h2 id="sports-hobbies-heading" class="bio-heading">
+              Sports &amp; <em>Hobbies</em>
+            </h2>
+          </div>
+          <div class="partner-grid partner-grid--single">
+            <article class="partner-card">
+              <h3 class="partner-card-name">Joy of Golf</h3>
+              <p class="partner-card-desc">
+                If you're considering trying golf and aren't sure where to
+                start, start with Joy. Golf can feel intimidating, especially
+                for beginners. Joy provides a down-to-earth, no-judgment
+                approach that helps golfers of all skill levels feel comfortable
+                learning the game. As a Certified Club Fitter at the PGA TOUR
+                Superstore in Kensington, Maryland, Joy helps clients understand
+                what equipment they need, how clubs are used, and how to select
+                the right tools based on their goals, experience level, and
+                budget. When you're ready to learn the rules of golf, understand
+                basic golf etiquette, build confidence on the course, or
+                determine whether golf is right for you, Joy offers practical
+                guidance that makes the game more approachable and enjoyable.
+                Whether you're picking up a club for the first time or returning
+                to the game after years away, Joy's passion for helping others
+                discover golf makes her a valuable resource for women exploring
+                new experiences and rediscovering what makes them feel alive.
+              </p>
+              <div class="partner-card-meta">
+                <div><span class="meta-label">Owner:</span> Joy Royes, Certified Club Fitter</div>
+              </div>
+              <div class="partner-card-actions">
+                <a href="https://joy-of-golf.netlify.app/" target="_blank" rel="noopener">Visit website</a>
+                <a href="https://calendly.com/412ladygolfer/book-a-golf-session" target="_blank" rel="noopener">Book a session</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         NUTRITION, WELLNESS & HEALTHY AGING
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        id="nutrition-wellness-aging"
+        class="partner-section"
+        aria-labelledby="nutrition-wellness-aging-heading"
+        data-testid="category-nutrition-wellness-aging"
+      >
+        <div class="partner-section-inner">
+          <div class="partner-section-header">
+            <div class="bio-eyebrow">Category</div>
+            <h2 id="nutrition-wellness-aging-heading" class="bio-heading">
+              Nutrition, Wellness &amp; <em>Healthy Aging</em>
+            </h2>
+          </div>
+          <div class="partner-grid partner-grid--single">
+            <article class="partner-card">
+              <h3 class="partner-card-name">Body Dynamics, Inc.</h3>
+              <div class="partner-card-services">Dallas, Texas</div>
+              <div class="partner-card-meta">
+                <div><span class="meta-label">Owner:</span> Brenda Swartz</div>
+                <div><span class="meta-label">Toll free:</span> <a href="tel:+18006342910">1-800-634-2910</a></div>
+                <div><span class="meta-label">Sales &amp; Products (Brenda):</span> <a href="tel:+19722455500">(972) 245-5500</a></div>
+              </div>
+              <div class="partner-card-actions">
+                <a href="https://www.bodydynamics.com" target="_blank" rel="noopener">Visit website</a>
+                <a href="https://www.bodydynamics.com/literature/store.list.pdf" target="_blank" rel="noopener">Store locations</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════
+         CTA BAND — become a partner
+    ══════════════════════════════════════════════════════════ -->
+      <section
+        class="cta-band"
+        aria-labelledby="cta-band-heading"
+        data-testid="cta-band"
+      >
+        <div class="cta-band-eyebrow">In good company</div>
+        <h2 id="cta-band-heading" class="cta-band-heading">
+          Know a business that belongs here?
+        </h2>
+        <p class="cta-band-text">
+          We're always looking for licensed businesses and professionals who
+          share our heart for helping women live whole, seen, and free. If
+          that's you, we'd love to hear from you.
+        </p>
+        <div class="cta-band-actions">
+          <a href="mailto:partnerships@nomorehiding.net" class="btn btn--white no-ext-icon">Become a Partner</a>
+          <a href="/contact/" class="btn btn--outline-white">Contact Us</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/includes.js"></script>
+    <script src="/js/global.js"></script>
+  </body>
 </html>
