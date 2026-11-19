@@ -37,7 +37,7 @@ const NMH_POSTS = [
     imageAlt: "A smiling Black woman in winter golf attire—quilted vest, beanie, and golf boots—resting a club on her shoulder on a frosty golf course at sunrise",
     url: "/blog/staying-golfie-off-season/",
     published: "November 16, 2026",
-    imagePosition: "center 25%"
+    imagePosition: "center 18%"
   },
 
   // Listen With Your Eyes…and Believe What You See
@@ -82,7 +82,7 @@ const NMH_POSTS = [
     imageAlt: "A smiling Black woman in winter golf attire—quilted vest, beanie, and golf boots—resting a club on her shoulder on a frosty golf course at sunrise",
     url: "/blog/staying-golfie-off-season/",
     published: "November 16, 2026",
-    imagePosition: "center 25%"
+    imagePosition: "center 18%"
   },
 
   // Listen With Your Eyes…and Believe What You See
