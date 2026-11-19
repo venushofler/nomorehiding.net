@@ -27,6 +27,19 @@ const NMH_POSTS = [
      Update images once blog post images are migrated.
   ──────────────────────────────────────────────────────────── */
 
+  // 10 Ways to Stay Golfie in the Off-Season
+  {
+    id: "staying-golfie-off-season",
+    title: "10 Ways to Stay Golfie in the Off-Season",
+    category: "Golf & Community",
+    excerpt: "Just because the grass has gone dormant doesn't mean your golf game has to. From winter layers to indoor simulators, here are ten ways to keep your golf lifestyle going all season long.",
+    image: "/images/blog/staying-golfie-off-season/staying-golfie-off-season-hero.png",
+    imageAlt: "A smiling Black woman in winter golf attire—quilted vest, beanie, and golf boots—resting a club on her shoulder on a frosty golf course at sunrise",
+    url: "/blog/staying-golfie-off-season/",
+    published: "November 16, 2026",
+    imagePosition: "center 25%"
+  },
+
   // Listen With Your Eyes…and Believe What You See
   {
     id: "listen-with-your-eyes",
@@ -39,18 +52,6 @@ const NMH_POSTS = [
     published: "September 25, 2026"
   },
 
-  // Beyond the Tee Box: My Experience as a Woman of Color Golfing in Scotland
-  {
-    id: "black-woman-golfer-scotland",
-    title: "Beyond the Tee Box: My Experience as a Woman of Color Golfing in Scotland",
-    category: "Golf & Community",
-    excerpt: "It wasn't the sport itself. It was what happened when I showed up on the course and decided I belonged there.",
-    image: "/images/blog/beyond-the-tee-box/beyond-the-tee-box-hero.png",
-    imagePosition: "center 20%",
-    imageAlt: "A Black woman golfing from an earlier century, standing on a scenic golf course with rolling hills and a cloudy sky in the background",
-    url: "/blog/beyond-the-tee-box/",
-    published: "October 1, 2025"
-  },
 
   // Am I My Sister's Keeper?
   {
@@ -70,6 +71,19 @@ const NMH_POSTS = [
      These appear in the "More Stories" card grid below the hero.
      Add images to /images/blog/ as they are migrated.
   ──────────────────────────────────────────────────────────────────────────── */
+
+  // 10 Ways to Stay Golfie in the Off-Season
+  {
+    id: "staying-golfie-off-season-grid",
+    title: "10 Ways to Stay Golfie in the Off-Season",
+    category: "Golf & Community",
+    excerpt: "Just because the grass has gone dormant doesn't mean your golf game has to. From winter layers to indoor simulators, here are ten ways to keep your golf lifestyle going all season long.",
+    image: "/images/blog/staying-golfie-off-season/staying-golfie-off-season-hero.png",
+    imageAlt: "A smiling Black woman in winter golf attire—quilted vest, beanie, and golf boots—resting a club on her shoulder on a frosty golf course at sunrise",
+    url: "/blog/staying-golfie-off-season/",
+    published: "November 16, 2026",
+    imagePosition: "center 25%"
+  },
 
   // Listen With Your Eyes…and Believe What You See
   {
