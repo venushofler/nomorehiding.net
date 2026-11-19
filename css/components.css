@@ -5719,7 +5719,8 @@
   border-radius: 0;
   padding: 1.6rem 1.9rem;
 }
-.post-callout--golfie .post-callout-label { color: #4A4A4A; }
+.post-callout--golfie .post-callout-label { color: #4A4A4A; text-transform: none; letter-spacing: normal; }
+.post-callout--golfie .golfie-pron { text-transform: none; font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Sans Unicode", "Arial Unicode MS", Arial, sans-serif; }
 
 .post-figure--float-right,
 .post-figure--float-left {
