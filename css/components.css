@@ -1322,7 +1322,7 @@
 /* ── Responsive: sidebar drops below article on tablet/mobile ── */
 @media (max-width: 960px) {
   .post-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0;
   }
 
@@ -1335,6 +1335,12 @@
 
   .post-layout .post-body {
     padding-bottom: 48px;
+    min-width: 0;
+  }
+
+  .post-layout .post-body img {
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -2884,6 +2890,7 @@
 /* Tags */
 .post-tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 
   padding-top: 36px;
