@@ -525,6 +525,39 @@
   z-index: -1;
 }
 
+/* Meet Renetta (About) — reduced photo floated left with text wrap; responsive */
+#meet-renetta.bio-section {
+  display: block;
+  max-width: 980px;
+  margin-inline: auto;
+}
+#meet-renetta .bio-photo-wrap {
+  float: left;
+  width: 320px;
+  max-width: 42%;
+  margin: 6px 44px 20px 0;
+}
+#meet-renetta .bio-photo {
+  aspect-ratio: 3 / 4;
+}
+#meet-renetta .bio-photo-accent,
+#meet-renetta .bio-photo-accent2 {
+  display: none;
+}
+#meet-renetta::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+@media (max-width: 700px) {
+  #meet-renetta .bio-photo-wrap {
+    float: none;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 28px;
+  }
+}
+
 .story-photo-accent {
   position: absolute;
   top: -24px;
