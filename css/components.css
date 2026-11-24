@@ -4108,6 +4108,8 @@
   border-radius: var(--radius-md, 12px);
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
 }
 
 .team-photo-wrap {
@@ -4115,6 +4117,7 @@
   aspect-ratio: 1 / 1;
   overflow: hidden;
   background: var(--color-gray-light, #f3f0ed);
+  flex-shrink: 0;
 }
 
 .team-photo-wrap img {
@@ -4137,6 +4140,7 @@
 .team-card-body {
   background: var(--color-salmon);
   padding: 20px 22px;
+  flex: 1;
 }
 
 .team-name {
@@ -5758,4 +5762,15 @@
 }
 @media (max-width: 760px) {
   .post-pullquote--oneline p { white-space: normal; font-size: 1rem; }
+}
+
+
+/* Team placeholder initials — shown until a headshot image is added at the card's src path */
+.team-photo-initials {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  opacity: 0.35;
+  letter-spacing: 1px;
 }
