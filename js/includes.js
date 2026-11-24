@@ -29,6 +29,7 @@
     <a href="/events/"              data-nav="events">Events</a>
     <a href="/blog/"          data-nav="blog">Blog</a>
     <a href="/community-partners/"  data-nav="community-partners">Community Partners</a>
+    <a href="/eldercare-hub/"       data-nav="eldercare-hub">Eldercare Hub</a>
     <a href="/about/"               data-nav="about">About</a>
     <a href="/contact/"             data-nav="contact" class="nav-cta">Contact</a>
   </div>
@@ -47,6 +48,7 @@
   <a href="/events/"              data-nav="events">Events</a>
   <a href="/blog/"          data-nav="blog">Blog</a>
   <a href="/community-partners/"  data-nav="community-partners">Community Partners</a>
+  <a href="/eldercare-hub/"       data-nav="eldercare-hub">Eldercare Hub</a>
   <a href="/contact/"             data-nav="contact">Contact</a>
 </div>
   `;
@@ -103,6 +105,7 @@
         <a href="/events/">Events</a>
         <a href="/blog/">Blog</a>
         <a href="/community-partners/">Community Partners</a>
+        <a href="/eldercare-hub/">Eldercare Hub</a>
         <a href="/contact/">Contact</a>
       </div>
     </div>
