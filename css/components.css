@@ -6001,7 +6001,7 @@
   margin: 0;
   text-align: center;
   position: sticky;
-  top: 24px;
+  top: 128px; /* clears the sticky nav (112px) so the cover isn't cut off */
 }
 .erh-workbook-cover img {
   width: 100%;
